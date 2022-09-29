@@ -10,9 +10,15 @@ package model;
  */
 public class Product {
     private String name;
-    private String descr;
-    private String availNum;
-    private String price;
+    private String id;
+    private String age;
+    private String gender;
+    private String startDate;
+    private String teamInfo;
+    private String level;
+    private String position;
+    private String mobileNo;
+    private String email;
 
     public String getName() {
         return name;
@@ -22,28 +28,77 @@ public class Product {
         this.name = name;
     }
 
-    public String getDescr() {
-        return descr;
+    public String getId() {
+        return id;
     }
 
-    public void setDescr(String descr) {
-        this.descr = descr;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getAvailNum() {
-        return availNum;
+    public String getAge() {
+        return age;
     }
 
-    public void setAvailNum(String availNum) {
-        this.availNum = availNum;
+    public void setAge(String age) {
+        this.age = age;
     }
 
-    public String getPrice() {
-        return price;
+    public String getGender() {
+        return gender;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getTeamInfo() {
+        return teamInfo;
+    }
+
+    public void setTeamInfo(String teamInfo) {
+        this.teamInfo = teamInfo;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getMobileNo() {
+        return mobileNo;
+    }
+
+    public void setMobileNo(String mobileNo) {
+        this.mobileNo = mobileNo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
     
+
 }

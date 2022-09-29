@@ -5,6 +5,7 @@
 package GUI;
 
 import model.Product;
+import model.viewEmployee;
 
 /**
  *
@@ -14,15 +15,17 @@ public class MainJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form MainJFrame
-     */
+     */   
     Product product;
     createJPanel createPanel;
+    viewJPanel viewPanel;
+    viewEmployee view;
     
     public MainJFrame() {
         initComponents();
         
-        product = new Product();
-        createPanel = new createJPanel(product);
+        view = new viewEmployee();
+        
     }
 
     /**
@@ -73,7 +76,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(btnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,22 +115,22 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spiltPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
+            .addComponent(spiltPanel)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+ 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        
+        createPanel = new createJPanel(view );
         spiltPanel.setRightComponent(createPanel);
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-        viewJPanel viewPanel = new viewJPanel(product);
-       spiltPanel.setRightComponent(viewPanel);
+        viewJPanel ViewPanel = new viewJPanel(view);
+        spiltPanel.setRightComponent(viewPanel);
     }//GEN-LAST:event_btnViewActionPerformed
 
     /** 
