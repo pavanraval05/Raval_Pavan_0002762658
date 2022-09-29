@@ -23,4 +23,8 @@ public Product addProduct(){
      view.add(newProducts); 
      return newProducts; 
 }    
-} 
+
+    public ArrayList<Product> getHistory() {
+        return view;
+    }
+}   

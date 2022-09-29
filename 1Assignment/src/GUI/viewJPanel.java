@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import javax.swing.table.DefaultTableModel;
 import model.Product;
 import model.viewEmployee;
 
@@ -21,7 +22,7 @@ public class viewJPanel extends javax.swing.JPanel {
     public viewJPanel(viewEmployee view) {
         initComponents();
         this.view = view ;  
-        
+        populateTable();
     }
 
     /**
@@ -36,17 +37,17 @@ public class viewJPanel extends javax.swing.JPanel {
         btnSave = new javax.swing.JButton();
         lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblName = new javax.swing.JTable();
+        tblView = new javax.swing.JTable();
         jComboBox1 = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
 
         btnSave.setText("Save");
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblTitle.setText("                                    View Product");
+        lblTitle.setText("                                                      Employee Detail's");
 
-        tblName.setModel(new javax.swing.table.DefaultTableModel(
+        tblView.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
@@ -65,7 +66,7 @@ public class viewJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblName);
+        jScrollPane1.setViewportView(tblView);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -74,10 +75,10 @@ public class viewJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("Search");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSearchActionPerformed(evt);
             }
         });
 
@@ -86,37 +87,34 @@ public class viewJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 13, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(21, 21, 21)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(18, 18, 18)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(51, 51, 51))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(194, 194, 194)
+                .addGap(18, 18, 18)
+                .addComponent(btnSearch)
+                .addGap(30, 30, 30)
                 .addComponent(btnSave)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addComponent(lblTitle)
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(btnSave)
-                .addContainerGap(84, Short.MAX_VALUE))
+                    .addComponent(btnSearch)
+                    .addComponent(btnSave))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -124,18 +122,39 @@ public class viewJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnSearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JTable tblName;
+    private javax.swing.JTable tblView;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+       DefaultTableModel model = (DefaultTableModel)tblView.getModel();
+       model.setRowCount(0);
+       for(Product  p : view.getHistory ()){
+           
+           Object[] row = new Object[10];
+           row[0]= p.getName();
+           row[1]= p.getId();
+           row[2]= p.getAge();
+           row[3]= p.getGender();
+           row[4]= p.getStartDate();
+           row[5]= p.getLevel();
+           row[6]= p.getTeamInfo();
+           row[7]= p.getPosition();
+           row[8]= p.getMobileNo();
+           row[9]= p.getEmail();  
+           
+           model.addRow(row);
+       }
+    }
 }
