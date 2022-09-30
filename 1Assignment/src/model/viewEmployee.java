@@ -27,4 +27,8 @@ public Product addProduct(){
     public ArrayList<Product> getHistory() {
         return view;
     }
+
+    public void deleteProduct(Product p) {
+     view.remove(p); 
+    }
 }   
