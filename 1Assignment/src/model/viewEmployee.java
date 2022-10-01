@@ -14,7 +14,7 @@ public class viewEmployee {
     private ArrayList<Product> view;
     
     public viewEmployee() {
-        this.view = new ArrayList<Product>();
+        this.view = new ArrayList<>();
         
     }
 
