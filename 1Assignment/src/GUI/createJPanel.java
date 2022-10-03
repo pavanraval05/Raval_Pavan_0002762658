@@ -352,6 +352,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtMobile.setText("");
         txtEmail.setText("");
         txtLvl.setText("");
+//        djhcvqwecf
 //        radioMale.setEnabled(true);
 //        radioFemale.setEnabled(true);
     }//GEN-LAST:event_btnSaveActionPerformed
