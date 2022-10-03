@@ -300,29 +300,29 @@ public class CreateJPanel extends javax.swing.JPanel {
         
         
         if(!Pattern.compile("[a-zA-Z ]+").matcher(name).matches()){
-            JOptionPane.showMessageDialog(this, "Name wrong");
+            JOptionPane.showMessageDialog(this, "Enter the Correct Name");
             return;
 //            ([a-z].*[0-9])|([0-9].*[a-z])
 //           
         }
         if(!Pattern.compile("[a-zA-Z ]+").matcher(id).matches()){
-            JOptionPane.showMessageDialog(this, "1");
+            JOptionPane.showMessageDialog(this, "Enter the Correct Employee ID");
             return;
         }if(!Pattern.compile("[0-9]*$").matcher(age).matches()){
-            JOptionPane.showMessageDialog(this, "2");
+            JOptionPane.showMessageDialog(this, "Enter the Correct Employee Age");
             return;
         }if(!Pattern.compile("[0-9]*$").matcher(startDate).matches()){
-            JOptionPane.showMessageDialog(this, "3");
+            JOptionPane.showMessageDialog(this, "Enter the Correct Employee Start Date");
             return;
         
         }if(!Pattern.compile("[a-zA-Z ]+").matcher(position).matches()){
-            JOptionPane.showMessageDialog(this, "4");
+            JOptionPane.showMessageDialog(this, "Enter the Correct Employee Position");
             return;
         }if(!Pattern.compile("[0-9]*$").matcher(mobileNo).matches()){
-            JOptionPane.showMessageDialog(this, "6");
+            JOptionPane.showMessageDialog(this, "Enter the Correct Employee Mobile No.");
             return;
         }if(!Pattern.compile("^(.+)@(.+)$").matcher(email).matches()){
-            JOptionPane.showMessageDialog(this, "7");
+            JOptionPane.showMessageDialog(this, "Enter the Correct Employee Email");
             return;
         }
         
