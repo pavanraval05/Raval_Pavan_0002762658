@@ -5,7 +5,7 @@
 package GUI;
 
 import model.Product;
-import model.viewEmployee;
+import model.ViewEmployee;
 
 /**
  *
@@ -17,14 +17,14 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */   
     Product product;
-    createJPanel createPanel;
-    viewJPanel viewPanel;
-    viewEmployee view;
+    CreateJPanel createPanel;
+    ViewJPanel viewPanel;
+    ViewEmployee view;
     
     public MainJFrame() {
         initComponents();
         
-        view = new viewEmployee();
+        view = new ViewEmployee();
         
     }
 
@@ -37,7 +37,7 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        spiltPanel = new javax.swing.JSplitPane();
+        splitPanel = new javax.swing.JSplitPane();
         workPanel = new javax.swing.JPanel();
         controlPanel = new javax.swing.JPanel();
         btnCreate = new javax.swing.JButton();
@@ -50,14 +50,14 @@ public class MainJFrame extends javax.swing.JFrame {
         workPanel.setLayout(workPanelLayout);
         workPanelLayout.setHorizontalGroup(
             workPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addGap(0, 577, Short.MAX_VALUE)
         );
         workPanelLayout.setVerticalGroup(
             workPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 578, Short.MAX_VALUE)
+            .addGap(0, 551, Short.MAX_VALUE)
         );
 
-        spiltPanel.setRightComponent(workPanel);
+        splitPanel.setRightComponent(workPanel);
 
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -85,36 +85,40 @@ public class MainJFrame extends javax.swing.JFrame {
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnView)
                     .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(controlPanelLayout.createSequentialGroup()
+                            .addGap(27, 27, 27)
+                            .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
+                            .addGap(21, 21, 21)
+                            .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addContainerGap(276, Short.MAX_VALUE)
+                .addContainerGap(203, Short.MAX_VALUE)
                 .addComponent(btnCreate)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addComponent(btnView)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(btnSearch)
-                .addGap(177, 177, 177))
+                .addGap(246, 246, 246))
         );
 
-        spiltPanel.setLeftComponent(controlPanel);
+        splitPanel.setLeftComponent(controlPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spiltPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)
+            .addComponent(splitPanel, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spiltPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
+            .addComponent(splitPanel)
         );
 
         pack();
@@ -122,18 +126,21 @@ public class MainJFrame extends javax.swing.JFrame {
  
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        createPanel = new createJPanel(view );
-        spiltPanel.setRightComponent(createPanel);
+        createPanel = new CreateJPanel(view );
+        splitPanel.setRightComponent(createPanel);
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-        viewPanel = new viewJPanel(view);
-        spiltPanel.setRightComponent(viewPanel);
+        viewPanel = new ViewJPanel(view);
+        splitPanel.setRightComponent(viewPanel);
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
+        SearchPanel search = new SearchPanel(view);
+        splitPanel.setRightComponent(search);
+         
     }//GEN-LAST:event_btnSearchActionPerformed
 
     /** 
@@ -176,7 +183,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnView;
     private javax.swing.JPanel controlPanel;
-    private javax.swing.JSplitPane spiltPanel;
+    private javax.swing.JSplitPane splitPanel;
     private javax.swing.JPanel workPanel;
     // End of variables declaration//GEN-END:variables
 }

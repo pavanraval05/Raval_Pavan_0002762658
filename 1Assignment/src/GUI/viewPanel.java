@@ -8,6 +8,6 @@ package GUI;
  *
  * @author pavan
  */
-public class viewPanel {
+public class ViewPanel {
     
 }

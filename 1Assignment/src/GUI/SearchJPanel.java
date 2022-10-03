@@ -4,10 +4,15 @@
  */
 package GUI;
 
+import model.ViewEmployee;
+
 /**
  *
  * @author pavan
  */
-class CreateJPanel {
+public class SearchJPanel {
+
+    public SearchJPanel(ViewEmployee view) {
+    }
     
 }

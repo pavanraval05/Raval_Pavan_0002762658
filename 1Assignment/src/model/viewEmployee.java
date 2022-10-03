@@ -10,10 +10,10 @@ import java.util.ArrayList;
  *
  * @author pavan
  */
-public class viewEmployee {
+public class ViewEmployee {
     private ArrayList<Product> view;
     
-    public viewEmployee() {
+    public ViewEmployee() {
         this.view = new ArrayList<>();
         
     }

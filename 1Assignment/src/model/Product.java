@@ -4,6 +4,9 @@
  */
 package model;
 
+import java.io.File;
+import java.util.Objects;
+
 /**
  *
  * @author pavan
@@ -19,6 +22,66 @@ public class Product {
     private String position;
     private String mobileNo;
     private String email;
+    private String photo;
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Product other = (Product) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.age, other.age)) {
+            return false;
+        }
+        if (!Objects.equals(this.gender, other.gender)) {
+            return false;
+        }
+        if (!Objects.equals(this.startDate, other.startDate)) {
+            return false;
+        }
+        if (!Objects.equals(this.teamInfo, other.teamInfo)) {
+            return false;
+        }
+        if (!Objects.equals(this.level, other.level)) {
+            return false;
+        }
+        if (!Objects.equals(this.position, other.position)) {
+            return false;
+        }
+        if (!Objects.equals(this.mobileNo, other.mobileNo)) {
+            return false;
+        }
+        if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
+        return Objects.equals(this.photo, other.photo);
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 
     public String getName() {
         return name;
@@ -104,6 +167,12 @@ public class Product {
     @Override
     public String toString(){
         return name;
+    }
+
+    public class model {
+
+        public model() {
+        }
     }
 }
     
