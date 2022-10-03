@@ -71,6 +71,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         setForeground(new java.awt.Color(203, 174, 227));
 
         lblTitle.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(20, 20, 20));
         lblTitle.setText("                                               Create Employee");
 
         lblName.setText("Name");
@@ -351,7 +352,6 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtMobile.setText("");
         txtEmail.setText("");
         txtLvl.setText("");
-        System.out.println(this.view.getHistory().size());
 //        radioMale.setEnabled(true);
 //        radioFemale.setEnabled(true);
     }//GEN-LAST:event_btnSaveActionPerformed
