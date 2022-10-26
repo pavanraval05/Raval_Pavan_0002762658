@@ -240,6 +240,8 @@ public class SystemAdminTask extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+         this.setVisible(false);
+        new SystemAdminPatientTask().setVisible(true); 
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -258,6 +260,8 @@ public class SystemAdminTask extends javax.swing.JFrame {
         //        DoctorDetails dd=new DoctorDetails();
         //        dd.setVisible(true);
         //        this.dispose();
+          this.setVisible(false);
+        new SystemAdminDoctorTask().setVisible(true); 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed

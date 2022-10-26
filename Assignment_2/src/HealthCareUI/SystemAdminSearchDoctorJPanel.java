@@ -8,12 +8,12 @@ package HealthCareUI;
  *
  * @author pavan
  */
-public class SystemAdminSearchDoctorJPanel1 extends javax.swing.JPanel {
+public class SystemAdminSearchDoctorJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form AdminDoctorJPanel
      */
-    public SystemAdminSearchDoctorJPanel1() {
+    public SystemAdminSearchDoctorJPanel() {
         initComponents();
     }
 
@@ -41,7 +41,7 @@ public class SystemAdminSearchDoctorJPanel1 extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Search Doctors");
+        jLabel2.setText("Search Doctor");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -72,7 +72,7 @@ public class SystemAdminSearchDoctorJPanel1 extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "NAME", "GENDER", "DEPARTMENT", "USERNAME", "PASSWORD"
+                "NAME", "CITY", "COMMUNITY", "ZIP CODE", "USERNAME", "PASSWORD"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -81,7 +81,7 @@ public class SystemAdminSearchDoctorJPanel1 extends javax.swing.JPanel {
 
         search1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search1.setForeground(new java.awt.Color(0, 102, 204));
-        search1.setText("SEARCH DOCTOR");
+        search1.setText("SEARCH HOSPITAL");
         search1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 search1ActionPerformed(evt);
@@ -91,7 +91,7 @@ public class SystemAdminSearchDoctorJPanel1 extends javax.swing.JPanel {
 
         jComboBox1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(0, 102, 204));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NAME", "ID", "USERNAME", "GENDER" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NAME", "CITY", "ZIP CODE", "COMMUNITY", "USERNAME" }));
         add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 111, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 

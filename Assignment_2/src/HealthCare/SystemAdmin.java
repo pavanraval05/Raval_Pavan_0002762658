@@ -4,11 +4,13 @@
  */
 package HealthCare;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author pavan
  */
-public class System {
-    
+public class SystemAdmin {
+    public static ArrayList<Doctor> doctorList = new ArrayList<>();
     
 }

@@ -31,7 +31,6 @@ public class SystemAdminDoctorTask extends javax.swing.JFrame {
         btnAdminAddDcotor = new javax.swing.JButton();
         btnAdminSearchDoctor = new javax.swing.JButton();
         btnAdminViewDoctor = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,9 +49,19 @@ public class SystemAdminDoctorTask extends javax.swing.JFrame {
 
         btnAdminSearchDoctor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         btnAdminSearchDoctor.setText("Search Doctor");
+        btnAdminSearchDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminSearchDoctorActionPerformed(evt);
+            }
+        });
 
         btnAdminViewDoctor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         btnAdminViewDoctor.setText("View Doctor");
+        btnAdminViewDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminViewDoctorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -64,7 +73,7 @@ public class SystemAdminDoctorTask extends javax.swing.JFrame {
                     .addComponent(btnAdminViewDoctor)
                     .addComponent(btnAdminSearchDoctor)
                     .addComponent(btnAdminAddDcotor))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAdminAddDcotor, btnAdminSearchDoctor, btnAdminViewDoctor});
@@ -85,21 +94,6 @@ public class SystemAdminDoctorTask extends javax.swing.JFrame {
 
         jSplitPane2.setLeftComponent(jPanel3);
 
-        jPanel4.setBackground(new java.awt.Color(204, 255, 255));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 692, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 808, Short.MAX_VALUE)
-        );
-
-        jSplitPane2.setRightComponent(jPanel4);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,7 +110,21 @@ public class SystemAdminDoctorTask extends javax.swing.JFrame {
 
     private void btnAdminAddDcotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminAddDcotorActionPerformed
         // TODO add your handling code here:
+//          this.setVisible(false);
+//          jPanel4.add(new SystemAdminAddDoctorJPanel());
+          jSplitPane2.setRightComponent(new SystemAdminAddDoctorJPanel());
+//        new SystemAdminAddDoctorJPanel().setVisible(true); 
     }//GEN-LAST:event_btnAdminAddDcotorActionPerformed
+
+    private void btnAdminSearchDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminSearchDoctorActionPerformed
+        // TODO add your handling code here:
+         jSplitPane2.setRightComponent(new SystemAdminSearchDoctorJPanel());
+    }//GEN-LAST:event_btnAdminSearchDoctorActionPerformed
+
+    private void btnAdminViewDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminViewDoctorActionPerformed
+        // TODO add your handling code here:
+        jSplitPane2.setRightComponent(new SystemAdminViewDoctorJPanel1());
+    }//GEN-LAST:event_btnAdminViewDoctorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,7 +173,6 @@ public class SystemAdminDoctorTask extends javax.swing.JFrame {
     private javax.swing.JButton btnAdminSearchDoctor;
     private javax.swing.JButton btnAdminViewDoctor;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JSplitPane jSplitPane2;
     // End of variables declaration//GEN-END:variables
 }

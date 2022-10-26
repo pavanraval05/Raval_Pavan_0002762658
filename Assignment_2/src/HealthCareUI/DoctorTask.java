@@ -116,6 +116,7 @@ public class DoctorTask extends javax.swing.JFrame {
 
     private void btnAdminAddDcotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminAddDcotorActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnAdminAddDcotorActionPerformed
 
     /**

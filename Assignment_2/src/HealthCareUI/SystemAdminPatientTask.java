@@ -53,6 +53,11 @@ public class SystemAdminPatientTask extends javax.swing.JFrame {
 
         btnAdminViewDoctor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         btnAdminViewDoctor.setText("View Patient");
+        btnAdminViewDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminViewDoctorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -116,7 +121,14 @@ public class SystemAdminPatientTask extends javax.swing.JFrame {
 
     private void btnAdminAddDcotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminAddDcotorActionPerformed
         // TODO add your handling code here:
+         this.setVisible(false);
+        new SystemAdminAddPatientJPanel().setVisible(true); 
     }//GEN-LAST:event_btnAdminAddDcotorActionPerformed
+
+    private void btnAdminViewDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminViewDoctorActionPerformed
+        // TODO add your handling code here:
+         
+    }//GEN-LAST:event_btnAdminViewDoctorActionPerformed
 
     /**
      * @param args the command line arguments

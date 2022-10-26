@@ -58,6 +58,11 @@ public class MainPage extends javax.swing.JFrame {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 290, 190));
 
         btnDoctor.setText("Doctor");
+        btnDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoctorActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 610, 150, 70));
 
         btnPatient.setText("Patient");
@@ -103,7 +108,17 @@ public class MainPage extends javax.swing.JFrame {
 
     private void btnSystemAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSystemAdminActionPerformed
         // TODO add your handling code here:
+        
+        this.setVisible(false);
+        new SystemAdminLogin().setVisible(true); // Main Form to show after the Login Form..
+    
     }//GEN-LAST:event_btnSystemAdminActionPerformed
+
+    private void btnDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorActionPerformed
+        // TODO add your handling code here:
+         this.setVisible(false);
+        new DoctorLogin().setVisible(true); 
+    }//GEN-LAST:event_btnDoctorActionPerformed
 
     /**
      * @param args the command line arguments
