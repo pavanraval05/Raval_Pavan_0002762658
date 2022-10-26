@@ -4,6 +4,11 @@
  */
 package HealthCareUI;
 
+import HealthCare.Doctor;
+import HealthCare.Patient;
+import HealthCare.SystemAdmin;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pavan
@@ -27,21 +32,21 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel4 = new javax.swing.JLabel();
-        doctorid = new javax.swing.JTextField();
+        patientID = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        firstname = new javax.swing.JTextField();
+        patientName = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        age = new javax.swing.JTextField();
+        patientCommunity = new javax.swing.JTextField();
         search = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        doctoruser = new javax.swing.JTextField();
-        doctorpassword = new javax.swing.JTextField();
+        patientUser = new javax.swing.JTextField();
+        patientPass = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        age1 = new javax.swing.JTextField();
-        doctorpassword1 = new javax.swing.JTextField();
+        patientGender = new javax.swing.JTextField();
+        patientCity = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
@@ -54,11 +59,11 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel6.setText("Age");
+        jLabel6.setText("Gender");
 
         search.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search.setForeground(new java.awt.Color(0, 102, 204));
-        search.setText("SEARCH DOCTOR");
+        search.setText("ADD DOCTOR");
         search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchActionPerformed(evt);
@@ -67,7 +72,7 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
 
         jLabel15.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel15.setText("City");
+        jLabel15.setText("Community");
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(0, 102, 204));
@@ -77,15 +82,15 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
         jLabel17.setForeground(new java.awt.Color(0, 102, 204));
         jLabel17.setText("Password");
 
-        doctoruser.addActionListener(new java.awt.event.ActionListener() {
+        patientUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                doctoruserActionPerformed(evt);
+                patientUserActionPerformed(evt);
             }
         });
 
-        doctorpassword.addActionListener(new java.awt.event.ActionListener() {
+        patientPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                doctorpasswordActionPerformed(evt);
+                patientPassActionPerformed(evt);
             }
         });
 
@@ -111,15 +116,15 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        doctorpassword1.addActionListener(new java.awt.event.ActionListener() {
+        patientCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                doctorpassword1ActionPerformed(evt);
+                patientCityActionPerformed(evt);
             }
         });
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel18.setText("Gender");
+        jLabel18.setText("City");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -136,7 +141,7 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(31, 31, 31)
-                                .addComponent(doctorid, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(patientID, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,8 +149,8 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
                                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(firstname, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(age1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(patientName, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(patientGender, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -154,12 +159,12 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
                                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(63, 63, 63)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(doctoruser)
-                                            .addComponent(doctorpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(age, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(patientUser)
+                                            .addComponent(patientPass, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(patientCommunity, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(181, 181, 181)
-                                        .addComponent(doctorpassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(patientCity, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(283, 283, 283)
@@ -174,34 +179,34 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
                 .addGap(102, 102, 102)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(doctorid, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(patientID, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
-                        .addComponent(firstname, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(patientName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(age1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(patientGender, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(doctorpassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(patientCity, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(patientCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(doctoruser, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(patientUser, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(doctorpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(patientPass, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
@@ -209,30 +214,27 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-       
+int id = Integer.parseInt(patientID.getText());
+//         String name = name.getText();
+         Patient patient = new Patient(id, patientUser.getText(), patientPass.getText(), patientName.getText(), patientCommunity.getText(), patientCity.getText(), patientCommunity.getText());
+         SystemAdmin.patientList.add(patient);
+         JOptionPane.showMessageDialog(null, "I am happy.");       
     }//GEN-LAST:event_searchActionPerformed
 
-    private void doctoruserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctoruserActionPerformed
+    private void patientUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_doctoruserActionPerformed
+    }//GEN-LAST:event_patientUserActionPerformed
 
-    private void doctorpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorpasswordActionPerformed
+    private void patientPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientPassActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_doctorpasswordActionPerformed
+    }//GEN-LAST:event_patientPassActionPerformed
 
-    private void doctorpassword1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorpassword1ActionPerformed
+    private void patientCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientCityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_doctorpassword1ActionPerformed
+    }//GEN-LAST:event_patientCityActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField age;
-    private javax.swing.JTextField age1;
-    private javax.swing.JTextField doctorid;
-    private javax.swing.JTextField doctorpassword;
-    private javax.swing.JTextField doctorpassword1;
-    private javax.swing.JTextField doctoruser;
-    private javax.swing.JTextField firstname;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -242,6 +244,13 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField patientCity;
+    private javax.swing.JTextField patientCommunity;
+    private javax.swing.JTextField patientGender;
+    private javax.swing.JTextField patientID;
+    private javax.swing.JTextField patientName;
+    private javax.swing.JTextField patientPass;
+    private javax.swing.JTextField patientUser;
     private javax.swing.JButton search;
     // End of variables declaration//GEN-END:variables
 }

@@ -28,7 +28,7 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="doctorid" min="-2" pref="193" max="-2" attributes="0"/>
+                              <Component id="patientID" min="-2" pref="193" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
@@ -38,8 +38,8 @@
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="firstname" min="-2" pref="193" max="-2" attributes="0"/>
-                                      <Component id="age1" alignment="0" min="-2" pref="193" max="-2" attributes="0"/>
+                                      <Component id="patientName" min="-2" pref="193" max="-2" attributes="0"/>
+                                      <Component id="patientGender" alignment="0" min="-2" pref="193" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
@@ -51,14 +51,14 @@
                                       <Component id="jLabel15" min="-2" pref="118" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="doctoruser" max="32767" attributes="0"/>
-                                          <Component id="doctorpassword" min="-2" pref="192" max="-2" attributes="0"/>
-                                          <Component id="age" alignment="0" min="-2" pref="193" max="-2" attributes="0"/>
+                                          <Component id="patientUser" max="32767" attributes="0"/>
+                                          <Component id="patientPass" min="-2" pref="192" max="-2" attributes="0"/>
+                                          <Component id="patientCommunity" alignment="0" min="-2" pref="193" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="181" pref="181" max="-2" attributes="0"/>
-                                      <Component id="doctorpassword1" min="-2" pref="192" max="-2" attributes="0"/>
+                                      <Component id="patientCity" min="-2" pref="192" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel18" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                               </Group>
@@ -82,12 +82,12 @@
               <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel4" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="doctorid" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="patientID" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="firstname" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="patientName" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -96,28 +96,28 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="age1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="patientGender" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel18" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="doctorpassword1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="patientCity" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel15" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="age" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="patientCommunity" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel19" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="doctoruser" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="patientUser" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel17" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="doctorpassword" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="patientPass" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="109" max="32767" attributes="0"/>
               <Component id="search" min="-2" pref="49" max="-2" attributes="0"/>
@@ -138,7 +138,7 @@
         <Property name="text" type="java.lang.String" value="Patient ID"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="doctorid">
+    <Component class="javax.swing.JTextField" name="patientID">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -151,7 +151,7 @@
         <Property name="text" type="java.lang.String" value=" Name"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="firstname">
+    <Component class="javax.swing.JTextField" name="patientName">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -161,10 +161,10 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="66" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Age"/>
+        <Property name="text" type="java.lang.String" value="Gender"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="age">
+    <Component class="javax.swing.JTextField" name="patientCommunity">
     </Component>
     <Component class="javax.swing.JButton" name="search">
       <Properties>
@@ -174,7 +174,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="66" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="SEARCH DOCTOR"/>
+        <Property name="text" type="java.lang.String" value="ADD DOCTOR"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchActionPerformed"/>
@@ -188,7 +188,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="66" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="City"/>
+        <Property name="text" type="java.lang.String" value="Community"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel19">
@@ -213,14 +213,14 @@
         <Property name="text" type="java.lang.String" value="Password"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="doctoruser">
+    <Component class="javax.swing.JTextField" name="patientUser">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="doctoruserActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="patientUserActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="doctorpassword">
+    <Component class="javax.swing.JTextField" name="patientPass">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="doctorpasswordActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="patientPassActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
@@ -263,11 +263,11 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="age1">
+    <Component class="javax.swing.JTextField" name="patientGender">
     </Component>
-    <Component class="javax.swing.JTextField" name="doctorpassword1">
+    <Component class="javax.swing.JTextField" name="patientCity">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="doctorpassword1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="patientCityActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel18">
@@ -278,7 +278,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="66" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Gender"/>
+        <Property name="text" type="java.lang.String" value="City"/>
       </Properties>
     </Component>
   </SubComponents>

@@ -6,6 +6,7 @@ package HealthCareUI;
 
 import HealthCare.Doctor;
 import HealthCare.SystemAdmin;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -37,7 +38,7 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
         firstname = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         gender = new javax.swing.JTextField();
-        search = new javax.swing.JButton();
+        update = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -66,12 +67,12 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(0, 102, 204));
         jLabel6.setText("Gender");
 
-        search.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        search.setForeground(new java.awt.Color(0, 102, 204));
-        search.setText("UPDATE DOCTOR");
-        search.addActionListener(new java.awt.event.ActionListener() {
+        update.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        update.setForeground(new java.awt.Color(0, 102, 204));
+        update.setText("UPDATE DOCTOR");
+        update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchActionPerformed(evt);
+                updateActionPerformed(evt);
             }
         });
 
@@ -202,7 +203,7 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(42, 42, 42)
-                                .addComponent(search))
+                                .addComponent(update))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(51, 51, 51)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,17 +269,57 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
                         .addGap(25, 25, 25))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-        
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        int selectedRowIndex = jTable1.getSelectedRow();
+       
+        if (selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this, "Please select a Row to Update");
+            return;
+        }
+       
+       
+       
+       
+       
+       
+        if(jTable1.getSelectedRowCount() == 1){
+          Doctor p = (Doctor)model.getValueAt(jTable1.getSelectedRow(), 8);
+         
+          p.doctorID=Integer.parseInt( doctorid.getText());
+          p.city=city.getText();
+          p.community= community.getText();
+          p.department=department.getText();
+          p.gender=gender.getText();
+          p.name=firstname.getText();
+          p.username=username.getText();
+          p.password=password.getText();
+          
+            //if single row is selected then update
+         fillTable();
+            JOptionPane.showMessageDialog(this, "Update Successful !!!");
+        }
+        else{
+           
+            if(jTable1.getRowCount () == 0){
+                //if table is empty
+                JOptionPane.showMessageDialog(this, "Table is empty !!!");
+            }
+            else{
+                //if row is not selected or multiple row is selected
+                JOptionPane.showMessageDialog(this, "Please select single row for update !!!");
+
+            }
+        }        
         
 
   
-    }//GEN-LAST:event_searchActionPerformed
+    }//GEN-LAST:event_updateActionPerformed
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
@@ -290,6 +331,12 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
 
     private void search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search1ActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        Doctor p = (Doctor)model.getValueAt(jTable1.getSelectedRow(), 8);
+        if(p!= null){
+            SystemAdmin.doctorList.remove(p);
+            fillTable();
+        }
     }//GEN-LAST:event_search1ActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -328,8 +375,8 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField password;
-    private javax.swing.JButton search;
     private javax.swing.JButton search1;
+    private javax.swing.JButton update;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 private void fillTable() {

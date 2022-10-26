@@ -12,16 +12,26 @@ import java.time.LocalDate;
  *
  * @author pavan
  */
-public class Patient extends Person {
-    
-    public Patient(String name, int ID, String Gender, String Position) {
-        super(name, ID, Gender, Position);
+public class Patient  {
+    public String username;
+   public String password;
+   public String name;
+   public String gender;
+  
+   public String city;
+   public String community;
+   public int patientID;
+
+    public Patient(int patientID, String username, String password, String name, String gender, String city, String community) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.gender = gender;
+        this.city = city;
+        this.community = community;
+        this.patientID = patientID;
+    }
+   
     }
     
-  private LocalDate DOB;
-  private String PatientEmail;
-  private int Mobile;
-  
-    
-  
-}
+ 

@@ -50,6 +50,11 @@ public class SystemAdminPatientTask extends javax.swing.JFrame {
 
         btnAdminSearchDoctor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         btnAdminSearchDoctor.setText("Search Patient");
+        btnAdminSearchDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminSearchDoctorActionPerformed(evt);
+            }
+        });
 
         btnAdminViewDoctor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         btnAdminViewDoctor.setText("View Patient");
@@ -121,14 +126,18 @@ public class SystemAdminPatientTask extends javax.swing.JFrame {
 
     private void btnAdminAddDcotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminAddDcotorActionPerformed
         // TODO add your handling code here:
-         this.setVisible(false);
-        new SystemAdminAddPatientJPanel().setVisible(true); 
+          jSplitPane2.setRightComponent(new SystemAdminAddPatientJPanel());
     }//GEN-LAST:event_btnAdminAddDcotorActionPerformed
 
     private void btnAdminViewDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminViewDoctorActionPerformed
         // TODO add your handling code here:
-         
+          jSplitPane2.setRightComponent(new SystemAdminViewPatientJPanel());
     }//GEN-LAST:event_btnAdminViewDoctorActionPerformed
+
+    private void btnAdminSearchDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminSearchDoctorActionPerformed
+        // TODO add your handling code here:
+         jSplitPane2.setRightComponent(new SystemAdminSearchPatientJPanel());
+    }//GEN-LAST:event_btnAdminSearchDoctorActionPerformed
 
     /**
      * @param args the command line arguments
