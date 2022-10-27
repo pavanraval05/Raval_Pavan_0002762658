@@ -4,17 +4,21 @@
  */
 package HealthCareUI;
 
+import HealthCare.Patient;
+
 /**
  *
  * @author pavan
  */
 public class PatientTasks extends javax.swing.JFrame {
 
+    private Patient patient;
     /**
      * Creates new form DoctorInfo
      */
-    public PatientTasks() {
+    public PatientTasks(Patient patient) {
         initComponents();
+        this.patient = patient;
     }
 
     /**
@@ -29,7 +33,6 @@ public class PatientTasks extends javax.swing.JFrame {
         jSplitPane2 = new javax.swing.JSplitPane();
         jPanel3 = new javax.swing.JPanel();
         btnAdminAddDcotor = new javax.swing.JButton();
-        btnAdminViewDoctor = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,34 +50,22 @@ public class PatientTasks extends javax.swing.JFrame {
             }
         });
 
-        btnAdminViewDoctor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
-        btnAdminViewDoctor.setText("Book Appointment");
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAdminViewDoctor)
-                    .addComponent(btnAdminAddDcotor))
-                .addContainerGap(12, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addComponent(btnAdminAddDcotor)
+                .addGap(23, 23, 23))
         );
-
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAdminAddDcotor, btnAdminViewDoctor});
-
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(224, 224, 224)
+                .addGap(349, 349, 349)
                 .addComponent(btnAdminAddDcotor, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(btnAdminViewDoctor)
-                .addContainerGap(443, Short.MAX_VALUE))
+                .addContainerGap(403, Short.MAX_VALUE))
         );
-
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAdminAddDcotor, btnAdminViewDoctor});
 
         jSplitPane2.setLeftComponent(jPanel3);
 
@@ -156,14 +147,13 @@ public class PatientTasks extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PatientTasks().setVisible(true);
+             
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdminAddDcotor;
-    private javax.swing.JButton btnAdminViewDoctor;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSplitPane jSplitPane2;

@@ -29,8 +29,6 @@ public class DoctorTask extends javax.swing.JFrame {
         jSplitPane2 = new javax.swing.JSplitPane();
         jPanel3 = new javax.swing.JPanel();
         btnAdminAddDcotor = new javax.swing.JButton();
-        btnAdminSearchDoctor = new javax.swing.JButton();
-        btnAdminViewDoctor = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,47 +39,29 @@ public class DoctorTask extends javax.swing.JFrame {
         jPanel3.setPreferredSize(new java.awt.Dimension(100, 200));
 
         btnAdminAddDcotor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
-        btnAdminAddDcotor.setText("Add Doctor");
+        btnAdminAddDcotor.setText("View Appointment");
         btnAdminAddDcotor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdminAddDcotorActionPerformed(evt);
             }
         });
 
-        btnAdminSearchDoctor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
-        btnAdminSearchDoctor.setText("Search Doctor");
-
-        btnAdminViewDoctor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
-        btnAdminViewDoctor.setText("View Doctor");
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAdminViewDoctor)
-                    .addComponent(btnAdminSearchDoctor)
-                    .addComponent(btnAdminAddDcotor))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(btnAdminAddDcotor)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
-
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAdminAddDcotor, btnAdminSearchDoctor, btnAdminViewDoctor});
-
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(227, 227, 227)
+                .addGap(340, 340, 340)
                 .addComponent(btnAdminAddDcotor, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addComponent(btnAdminViewDoctor)
-                .addGap(55, 55, 55)
-                .addComponent(btnAdminSearchDoctor)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addContainerGap(412, Short.MAX_VALUE))
         );
-
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAdminAddDcotor, btnAdminSearchDoctor, btnAdminViewDoctor});
 
         jSplitPane2.setLeftComponent(jPanel3);
 
@@ -171,8 +151,6 @@ public class DoctorTask extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdminAddDcotor;
-    private javax.swing.JButton btnAdminSearchDoctor;
-    private javax.swing.JButton btnAdminViewDoctor;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSplitPane jSplitPane2;

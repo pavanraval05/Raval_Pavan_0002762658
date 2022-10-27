@@ -56,7 +56,7 @@ public class SystemAdminAddHospitalJPanel extends javax.swing.JPanel {
 
         search.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search.setForeground(new java.awt.Color(0, 102, 204));
-        search.setText("SEARCH HOSPITAL");
+        search.setText("ADD HOSPITAL");
         search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchActionPerformed(evt);

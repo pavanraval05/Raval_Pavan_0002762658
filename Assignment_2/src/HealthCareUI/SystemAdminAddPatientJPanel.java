@@ -37,7 +37,7 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
         patientName = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         patientCommunity = new javax.swing.JTextField();
-        search = new javax.swing.JButton();
+        addDoctor = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -61,12 +61,12 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(0, 102, 204));
         jLabel6.setText("Gender");
 
-        search.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        search.setForeground(new java.awt.Color(0, 102, 204));
-        search.setText("ADD DOCTOR");
-        search.addActionListener(new java.awt.event.ActionListener() {
+        addDoctor.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        addDoctor.setForeground(new java.awt.Color(0, 102, 204));
+        addDoctor.setText("ADD DOCTOR");
+        addDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchActionPerformed(evt);
+                addDoctorActionPerformed(evt);
             }
         });
 
@@ -168,7 +168,7 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(283, 283, 283)
-                        .addComponent(search)))
+                        .addComponent(addDoctor)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -208,18 +208,18 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(patientPass, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-                .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+    private void addDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDoctorActionPerformed
 int id = Integer.parseInt(patientID.getText());
 //         String name = name.getText();
          Patient patient = new Patient(id, patientUser.getText(), patientPass.getText(), patientName.getText(), patientCommunity.getText(), patientCity.getText(), patientCommunity.getText());
          SystemAdmin.patientList.add(patient);
-         JOptionPane.showMessageDialog(null, "I am happy.");       
-    }//GEN-LAST:event_searchActionPerformed
+         JOptionPane.showMessageDialog(null, "Added Patient.");       
+    }//GEN-LAST:event_addDoctorActionPerformed
 
     private void patientUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientUserActionPerformed
         // TODO add your handling code here:
@@ -235,6 +235,7 @@ int id = Integer.parseInt(patientID.getText());
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addDoctor;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -251,6 +252,5 @@ int id = Integer.parseInt(patientID.getText());
     private javax.swing.JTextField patientName;
     private javax.swing.JTextField patientPass;
     private javax.swing.JTextField patientUser;
-    private javax.swing.JButton search;
     // End of variables declaration//GEN-END:variables
 }

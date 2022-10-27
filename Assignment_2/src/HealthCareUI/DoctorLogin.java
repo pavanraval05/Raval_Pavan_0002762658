@@ -4,6 +4,8 @@
  */
 package HealthCareUI;
 
+import HealthCare.Doctor;
+import HealthCare.SystemAdmin;
 import javax.swing.JOptionPane;
 
 /**
@@ -120,6 +122,11 @@ public class DoctorLogin extends javax.swing.JFrame {
         String pass;
         user=username.getText();
         pass=password.getText();
+        for(Doctor temp:SystemAdmin.doctorList){
+            if(temp.verify(user, pass)){
+                
+            }
+        }
 //        adminpanel p=new adminpanel();
         if(user.equals("admin")&&pass.equals("admin"))
         {

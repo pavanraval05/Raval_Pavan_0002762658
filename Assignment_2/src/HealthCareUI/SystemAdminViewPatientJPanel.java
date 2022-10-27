@@ -389,7 +389,7 @@ DefaultTableModel model = (DefaultTableModel) patientTable.getModel();
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 
-DefaultTableModel model = (DefaultTableModel)patientTable.getModel();
+
        private void fillTable() {
        DefaultTableModel model = (DefaultTableModel)patientTable.getModel();
        model.setRowCount(0);
