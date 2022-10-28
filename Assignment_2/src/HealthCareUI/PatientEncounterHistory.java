@@ -4,17 +4,25 @@
  */
 package HealthCareUI;
 
+import HealthCare.Encounter;
+import HealthCare.Patient;
+import HealthCare.SystemAdmin;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author pavan
  */
 public class PatientEncounterHistory extends javax.swing.JPanel {
-
+public Patient pa;
     /**
      * Creates new form PatientEncounterHistory
      */
-    public PatientEncounterHistory() {
+    public PatientEncounterHistory(Patient pa) {
         initComponents();
+        this.pa=pa;
+        
+        fillTable();
     }
 
     /**
@@ -26,19 +34,72 @@ public class PatientEncounterHistory extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "NAME", "GENDER", "CITY", "COMMUNITY", "VITALS", "Encounter Obj"
+            }
+        ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(94, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 918, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(149, 149, 149)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(325, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+  
+    }//GEN-LAST:event_jTable1MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-}
+private void fillTable() {
+       DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+       model.setRowCount(0);
+       for(Encounter  p : SystemAdmin.encounterList ){
+           if(p.patient==this.pa){
+           Object[] row = new Object[7];
+           row[0]= p.patient.patientID;
+           row[1]= p.patient.name;
+           
+           row[2]= p.patient.gender;
+           row[3]= p.patient.city;
+           
+           
+           row[4]= p.patient.community;
+           row[5]=p.vitalSigns;           
+           row[6]= p;
+           
+           
+           model.addRow(row);
+       }}}}
