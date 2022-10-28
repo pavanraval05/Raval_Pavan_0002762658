@@ -4,17 +4,28 @@
  */
 package HealthCareUI;
 
+import HealthCare.Hospital;
+import HealthCare.Patient;
+import HealthCare.SystemAdmin;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author pavan
  */
 public class SystemAdminSearchHospitalJPanel extends javax.swing.JPanel {
-
+private TableRowSorter<TableModel> sorter; 
     /**
      * Creates new form AdminDoctorJPanel
      */
     public SystemAdminSearchHospitalJPanel() {
         initComponents();
+        fillTable();
+        sorter = new TableRowSorter<TableModel>(jTable1.getModel());
+        jTable1.setRowSorter(sorter);
     }
 
     /**
@@ -26,7 +37,7 @@ public class SystemAdminSearchHospitalJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        doctorid = new javax.swing.JTextField();
+        search = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -35,7 +46,13 @@ public class SystemAdminSearchHospitalJPanel extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(doctorid, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 110, 336, 32));
+
+        search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                searchKeyReleased(evt);
+            }
+        });
+        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 110, 336, 32));
 
         jPanel1.setBackground(new java.awt.Color(93, 154, 244));
 
@@ -66,13 +83,13 @@ public class SystemAdminSearchHospitalJPanel extends javax.swing.JPanel {
         jTable1.setForeground(new java.awt.Color(0, 102, 204));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "NAME", "CITY", "COMMUNITY", "ZIP CODE", "USERNAME", "PASSWORD"
+                "NAME", "COMMUNITY", "USERNAME", "PASSWORD", "Hospital Obj"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -99,14 +116,38 @@ public class SystemAdminSearchHospitalJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_search1ActionPerformed
 
+    private void searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyReleased
+        // TODO add your handling code here:
+        String textBoxString = search.getText();
+        sorter.setRowFilter(RowFilter.regexFilter(textBoxString));
+      
+    
+    }//GEN-LAST:event_searchKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField doctorid;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField search;
     private javax.swing.JButton search1;
     // End of variables declaration//GEN-END:variables
-}
+private void fillTable() {
+       DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+       model.setRowCount(0);
+       for(Hospital  p : SystemAdmin.hospitalList ){
+           
+           Object[] row = new Object[5];
+           row[0]= p.getHospitalName();
+           row[1]= p.getBelongsToCummunity();
+           row[2]= p.getUsername();
+           
+           row[3]= p.getPassword();
+           row[4]= p;
+          
+           
+           
+           model.addRow(row);
+       }}}

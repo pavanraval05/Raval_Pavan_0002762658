@@ -15,23 +15,23 @@ public class Doctor {
    public String name;
    public String gender;
    public String department;
-   public String city;
-   public String community;
+ 
    public int doctorID;
+   public Hospital hospital;
    public boolean verify(String username,String password){
        if(this.username.equals(username) && this.password.equals(password) )return true;
        return false;
        
    }
-    public Doctor(int doctorID, String username, String password, String name, String gender, String department, String city, String community) {
+    public Doctor(int doctorID, String username, String password, String name, String gender, String department,  Hospital hospital) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.gender = gender;
         this.department = department;
-        this.city = city;
-        this.community = community;
+       
         this.doctorID = doctorID;
+        this.hospital= hospital;
     }
    
     

@@ -165,8 +165,8 @@ private void fillTable() {
            row[1]= p.name;
            row[2]= p.gender;
            row[3]= p.department;
-           row[4]= p.city;
-           row[5]= p.community;
+//           row[4]= p.city;
+//           row[5]= p.community;
            row[6]= p.username;
            row[7]= p.password;
            row[8]= p;

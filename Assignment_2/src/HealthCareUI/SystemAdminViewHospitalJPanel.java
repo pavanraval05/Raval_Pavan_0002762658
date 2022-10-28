@@ -264,8 +264,8 @@ DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
           Doctor p = (Doctor)model.getValueAt(jTable1.getSelectedRow(), 8);
          
           p.doctorID=Integer.parseInt( doctorid.getText());
-          p.city=city.getText();
-          p.community= community.getText();
+//          p.city=city.getText();
+//          p.community= community.getText();
          
           p.name=firstname.getText();
           p.username=username.getText();
@@ -317,8 +317,8 @@ DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         doctorid.setText(String.valueOf(p.doctorID));
         firstname.setText(p.name);
         
-        city.setText(p.city);
-        community.setText(p.community);
+//        city.setText(p.city);
+//        community.setText(p.community);
         username.setText(p.username);
         password.setText(p.password);
         
@@ -355,8 +355,8 @@ private void fillTable() {
            row[1]= p.name;
            row[2]= p.gender;
            row[3]= p.department;
-           row[4]= p.city;
-           row[5]= p.community;
+//           row[4]= p.city;
+//           row[5]= p.community;
            row[6]= p.username;
            row[7]= p.password;
            row[8]= p;

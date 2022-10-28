@@ -107,10 +107,8 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="firstname" min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" pref="35" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="firstname" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="jLabel3" min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="city" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>

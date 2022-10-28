@@ -9,5 +9,12 @@ package HealthCare;
  * @author pavan
  */
 public class Encounter {
+    public Doctor doctor;
+    public Patient patient;
+
+    public Encounter(Doctor doctor, Patient patient) {
+        this.doctor = doctor;
+        this.patient = patient;
+    }
     
 }

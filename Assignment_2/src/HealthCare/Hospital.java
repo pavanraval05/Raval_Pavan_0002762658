@@ -13,18 +13,54 @@ import java.util.List;
 public class Hospital {
     
     private String hospitalName;
-    private int hostipalID;
-    private Community belongsToCummunity;
-    List<Doctor>doctors;
+    private String username;
+    private String password;
 
-    public Hospital(String hospitalName, int hostipalID, Community belongsToCummunity, List<Doctor> doctors) {
-        this.hospitalName = hospitalName;
-        this.hostipalID = hostipalID;
-        this.belongsToCummunity = belongsToCummunity;
-        this.doctors = doctors;
+    public String getHospitalName() {
+        return hospitalName;
     }
+
+    public void setHospitalName(String hospitalName) {
+        this.hospitalName = hospitalName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Community getBelongsToCummunity() {
+        return belongsToCummunity;
+    }
+
+    public void setBelongsToCummunity(Community belongsToCummunity) {
+        this.belongsToCummunity = belongsToCummunity;
+    }
+
+    public Hospital(String hospitalName, String username, String password, Community belongsToCummunity) {
+        this.hospitalName = hospitalName;
+        this.username = username;
+        this.password = password;
+        this.belongsToCummunity = belongsToCummunity;
+    }
+    
+   
+    private Community belongsToCummunity;
+   
+}
     
    
     
     
-}
+

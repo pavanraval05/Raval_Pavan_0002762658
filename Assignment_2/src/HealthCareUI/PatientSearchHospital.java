@@ -4,17 +4,30 @@
  */
 package HealthCareUI;
 
+import HealthCare.City;
+import HealthCare.Community;
+import HealthCare.Doctor;
+import HealthCare.Hospital;
+import HealthCare.SystemAdmin;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author pavan
  */
 public class PatientSearchHospital extends javax.swing.JPanel {
-
+private TableRowSorter<TableModel> sorter; 
     /**
      * Creates new form PatientSearchHospital
      */
     public PatientSearchHospital() {
         initComponents();
+        fillTable();
+        sorter = new TableRowSorter<TableModel>(jTable2.getModel());
+        jTable2.setRowSorter(sorter);
     }
 
     /**
@@ -26,7 +39,7 @@ public class PatientSearchHospital extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        sear = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         search = new javax.swing.JButton();
@@ -35,9 +48,14 @@ public class PatientSearchHospital extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        sear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                searActionPerformed(evt);
+            }
+        });
+        sear.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                searKeyReleased(evt);
             }
         });
 
@@ -89,20 +107,21 @@ public class PatientSearchHospital extends javax.swing.JPanel {
         jTable2.setForeground(new java.awt.Color(0, 102, 204));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "NAME", "CITY", "COMMUNITY", "ZIP CODE"
+                "NAME", "CITY", "COMMUNITY", "ZIP CODE", "Hosp Obj"
             }
         ));
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
-        if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(1).setHeaderValue("CITY");
-            jTable2.getColumnModel().getColumn(2).setHeaderValue("COMMUNITY");
-        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -119,19 +138,17 @@ public class PatientSearchHospital extends javax.swing.JPanel {
                             .addGap(115, 115, 115)
                             .addComponent(search2)
                             .addGap(78, 78, 78)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(sear, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(379, 379, 379)
                             .addComponent(search1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(115, 115, 115)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(111, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(116, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(110, 110, 110)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,23 +158,20 @@ public class PatientSearchHospital extends javax.swing.JPanel {
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(search2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 259, Short.MAX_VALUE)
+                    .addComponent(sear, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68)
                 .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(249, 249, 249)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(361, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void searActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_searActionPerformed
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
 
@@ -171,15 +185,67 @@ public class PatientSearchHospital extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_search2ActionPerformed
 
+    private void searKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searKeyReleased
+        // TODO add your handling code here:
+          String textBoxString = sear.getText();
+        sorter.setRowFilter(RowFilter.regexFilter(textBoxString));
+    }//GEN-LAST:event_searKeyReleased
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        // TODO add your handling code here:
+        if(jTable1.getSelectedRow()>-1){
+            Hospital c = (Hospital)jTable1.getValueAt(jTable1.getSelectedRow(), 4);
+            fillTable1(c);
+        }
+    
+    }//GEN-LAST:event_jTable2MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField sear;
     private javax.swing.JButton search;
     private javax.swing.JButton search1;
     private javax.swing.JButton search2;
     // End of variables declaration//GEN-END:variables
+
+private void fillTable() {
+       DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+       model.setRowCount(0);
+       for(Hospital  p : SystemAdmin.hospitalList ){
+           
+           Object[] row = new Object[5];
+           row[0]= p.getHospitalName();
+           row[1]= p.getBelongsToCummunity().getCity();
+           row[2]= p.getBelongsToCummunity();
+           
+           row[3]= p.getBelongsToCummunity().getCity().zipCode;
+           row[4]= p;
+          
+           
+           
+           model.addRow(row);
+       }
+}
+
+    private void fillTable1(Hospital c) {
+      DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+       model.setRowCount(0);
+       for(Doctor  p : SystemAdmin.doctorList ){
+           if(p.hospital == c){
+                Object[] row = new Object[3];
+                row[0]= p.name;
+                row[1]= p.doctorID;
+                row[2]=p;
+
+
+
+                model.addRow(row);
+           }
+       }
+    }
+
 }
