@@ -183,7 +183,9 @@ private TableRowSorter<TableModel> sorter;
         if(jTable2.getSelectedRow()>-1 && jTable1.getSelectedRow()>-1){
             Hospital c = (Hospital)jTable2.getValueAt(jTable2.getSelectedRow(), 4);
             Doctor d = (Doctor)jTable1.getValueAt(jTable1.getSelectedRow(), 2);
-            Encounter e = new Encounter(d,this.patient); 
+            Encounter e = new Encounter(d,this.patient);
+            SystemAdmin.encounterList.add(e);
+           
             JOptionPane.showMessageDialog(null, "Appoointment Booked");
         }
 

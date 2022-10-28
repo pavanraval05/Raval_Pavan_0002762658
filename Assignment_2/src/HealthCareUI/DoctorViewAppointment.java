@@ -4,17 +4,26 @@
  */
 package HealthCareUI;
 
+import HealthCare.Doctor;
+import HealthCare.Encounter;
+import HealthCare.Patient;
+import HealthCare.SystemAdmin;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author pavan
  */
 public class DoctorViewAppointment extends javax.swing.JPanel {
+public Doctor doctor;
 
     /**
      * Creates new form DoctorViewAppointment
      */
-    public DoctorViewAppointment() {
+    public DoctorViewAppointment(Doctor p) {
         initComponents();
+        doctor=p;
     }
 
     /**
@@ -54,7 +63,7 @@ public class DoctorViewAppointment extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "NAME", "GENDER", "CITY", "COMMUNITY", "VITALS", "PatObj"
+                "ID", "NAME", "GENDER", "CITY", "COMMUNITY", "VITALS", "Encounter Obj"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -203,17 +212,16 @@ public class DoctorViewAppointment extends javax.swing.JPanel {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-//        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-//        Doctor p = (Doctor)model.getValueAt(jTable1.getSelectedRow(), 8);
-//        doctorid.setText(String.valueOf(p.doctorID));
-//        firstname.setText(p.name);
-//        gender.setText(p.gender);
-//        department.setText(p.department);
-//        city.setText(p.city);
-//        community.setText(p.community);
-//        username.setText(p.username);
-//        password.setText(p.password);
-
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        Encounter p = (Encounter)model.getValueAt(jTable1.getSelectedRow(), 6);
+        patientID.setText(String.valueOf(p.patient.patientID));
+        
+        patientName.setText(p.patient.name);
+        patientGender.setText(p.patient.gender);
+        
+        patientCity.setText(p.patient.city);
+        patientCommunity.setText(p.patient.community);
+        
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void patientCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientCityActionPerformed
@@ -225,11 +233,14 @@ public class DoctorViewAppointment extends javax.swing.JPanel {
     }//GEN-LAST:event_patientPass1ActionPerformed
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-//        int id = Integer.parseInt(doctorid.getText());
-//        String name1 = name.getText();
-//        Doctor doctor = new Doctor(id, doctoruser.getText(), doctorpassword.getText(), name.getText(), age.getText(), department.getText(), city.getText(), community.getText());
-//        SystemAdmin.doctorList.add(doctor);
-//        JOptionPane.showMessageDialog(null, "I am happy.");
+      
+        String vitals = patientPass1.getText();
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        Encounter p = (Encounter)model.getValueAt(jTable1.getSelectedRow(), 6);
+        p.vitalSigns=vitals;
+        fillTable();
+        SystemAdmin.doctorList.add(doctor);
+        JOptionPane.showMessageDialog(null, "Vitals Added");
     }//GEN-LAST:event_searchActionPerformed
 
 
@@ -251,4 +262,24 @@ public class DoctorViewAppointment extends javax.swing.JPanel {
     private javax.swing.JTextField patientPass1;
     private javax.swing.JButton search;
     // End of variables declaration//GEN-END:variables
+private void fillTable() {
+       DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+       model.setRowCount(0);
+       for(Encounter  p : SystemAdmin.encounterList ){
+           if(p.doctor==this.doctor){
+           Object[] row = new Object[7];
+           row[0]= p.patient.patientID;
+           row[1]= p.patient.name;
+           
+           row[2]= p.patient.gender;
+           row[3]= p.patient.city;
+           
+           
+           row[4]= p.patient.community;
+           row[5]=p.vitalSigns;           
+           row[6]= p;
+           
+           
+           model.addRow(row);
+       }}}
 }
