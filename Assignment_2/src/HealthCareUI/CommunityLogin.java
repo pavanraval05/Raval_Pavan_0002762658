@@ -4,6 +4,9 @@
  */
 package HealthCareUI;
 
+import HealthCare.Community;
+import HealthCare.Patient;
+import HealthCare.SystemAdmin;
 import javax.swing.JOptionPane;
 
 /**
@@ -120,18 +123,21 @@ public class CommunityLogin extends javax.swing.JFrame {
         String pass;
         user=username.getText();
         pass=password.getText();
+        for(Community temp:SystemAdmin.communityList){
+//            if(temp.verify(user, pass))
 //        adminpanel p=new adminpanel();
-        if(user.equals(username)&&pass.equals(password))
+        if(temp.verify(user, pass))
         {
             this.dispose();
 //            p.setVisible(true);
   this.setVisible(false);
-        new CommunityAdminTask().setVisible(true); 
+        new CommunityAdminTask(temp).setVisible(true); 
         }
         else
         {
             JOptionPane.showMessageDialog(this,"Incorrect Admin Username & Password");
         }
+     }
     
     }//GEN-LAST:event_jButton1ActionPerformed
 

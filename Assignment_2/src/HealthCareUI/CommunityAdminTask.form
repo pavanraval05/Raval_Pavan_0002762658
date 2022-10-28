@@ -99,6 +99,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Add House"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdminSearchDoctorActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

@@ -4,17 +4,27 @@
  */
 package HealthCareUI;
 
+import HealthCare.City;
+import HealthCare.Community;
+import HealthCare.House;
+import HealthCare.SystemAdmin;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author pavan
  */
-public class CommunityAddHouse extends javax.swing.JPanel {
+public class CommunityAdminAddHouse extends javax.swing.JPanel {
 
     /**
      * Creates new form CommunityAddCommunity
      */
-    public CommunityAddHouse() {
+    public CommunityAdminAddHouse() {
         initComponents();
+        fillTable();
+//        fillTable1();
+        fillTable2();
     }
 
     /**
@@ -28,13 +38,13 @@ public class CommunityAddHouse extends javax.swing.JPanel {
 
         jLabel3 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
+        btnAdminAddDcotor = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        btnAdminAddDcotor = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 204));
@@ -45,6 +55,27 @@ public class CommunityAddHouse extends javax.swing.JPanel {
                 nameActionPerformed(evt);
             }
         });
+
+        btnAdminAddDcotor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
+        btnAdminAddDcotor.setText("Add House");
+        btnAdminAddDcotor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminAddDcotorActionPerformed(evt);
+            }
+        });
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "House Name", "Community Name", "House Object"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -57,47 +88,31 @@ public class CommunityAddHouse extends javax.swing.JPanel {
                 "City Name", "City Object"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Community Name", "Community Object"
+                "Community Name", "city", "Community Object"
             }
         ));
         jScrollPane2.setViewportView(jTable2);
-
-        btnAdminAddDcotor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
-        btnAdminAddDcotor.setText("Add House");
-        btnAdminAddDcotor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdminAddDcotorActionPerformed(evt);
-            }
-        });
-
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "House Name", "House Object"
-            }
-        ));
-        jScrollPane3.setViewportView(jTable3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(71, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -116,23 +131,21 @@ public class CommunityAddHouse extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(49, 49, 49)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
-                        .addComponent(btnAdminAddDcotor, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(210, 210, 210))))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(514, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addComponent(btnAdminAddDcotor, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(210, 210, 210))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -142,7 +155,25 @@ public class CommunityAddHouse extends javax.swing.JPanel {
 
     private void btnAdminAddDcotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminAddDcotorActionPerformed
         // TODO add your handling code here:
+        if(jTable2.getSelectedRow()>-1) {
+          City c = (City)jTable2.getValueAt(jTable2.getSelectedRow(),1);
+          Community b = (Community)jTable2.getValueAt(jTable2.getSelectedRow(),2);
+         House a= new House(Integer.parseInt((name.getText())),b);
+         SystemAdmin.houseList.add(a);
+         fillTable2();
+        }
+        else{
+             JOptionPane.showMessageDialog(null, "Please Select City");
+        }
     }//GEN-LAST:event_btnAdminAddDcotorActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        if(jTable1.getSelectedRow()>-1){
+            City c = (City)jTable1.getValueAt(jTable1.getSelectedRow(), 1);
+            fillTable1(c);
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -156,4 +187,47 @@ public class CommunityAddHouse extends javax.swing.JPanel {
     private javax.swing.JTable jTable3;
     private javax.swing.JTextField name;
     // End of variables declaration//GEN-END:variables
-}
+
+private void fillTable() {
+       DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+       model.setRowCount(0);
+       for(City  p : SystemAdmin.cityList ){
+           
+           Object[] row = new Object[2];
+           row[0]= p.cityName;
+           row[1]= p;
+           
+           
+           
+           model.addRow(row);
+       }}
+
+private void fillTable1(City c) {
+       DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+       model.setRowCount(0);
+       for(Community  p : SystemAdmin.communityList ){
+           if(p.getCity() == c){
+                Object[] row = new Object[3];
+                row[0]= p.getCommunityName();
+                row[1]= p.getCity();
+                row[2]=p;
+
+
+
+                model.addRow(row);
+           }
+       }}
+private void fillTable2() {
+       DefaultTableModel model = (DefaultTableModel)jTable3.getModel();
+       model.setRowCount(0);
+       for(House  p : SystemAdmin.houseList ){
+           
+           Object[] row = new Object[3];
+           row[0]= p.houseNo;
+           row[1]= p.community;
+           row[2]=p;
+           
+           
+           
+           model.addRow(row);
+       }}}
