@@ -30,6 +30,7 @@ public class SystemAdminHospitalTask extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         btnAdminAddDcotor = new javax.swing.JButton();
         btnAdminSearchDoctor = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,15 +56,27 @@ public class SystemAdminHospitalTask extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAdminSearchDoctor)
-                    .addComponent(btnAdminAddDcotor))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnAdminSearchDoctor)
+                            .addComponent(btnAdminAddDcotor)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jButton1)))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
@@ -76,7 +89,9 @@ public class SystemAdminHospitalTask extends javax.swing.JFrame {
                 .addComponent(btnAdminAddDcotor, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(168, 168, 168)
                 .addComponent(btnAdminSearchDoctor)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addGap(109, 109, 109)
+                .addComponent(jButton1)
+                .addContainerGap(168, Short.MAX_VALUE))
         );
 
         jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAdminAddDcotor, btnAdminSearchDoctor});
@@ -121,6 +136,11 @@ public class SystemAdminHospitalTask extends javax.swing.JFrame {
         // TODO add your handling code here:
         jSplitPane2.setRightComponent(new SystemAdminSearchHospitalJPanel());
     }//GEN-LAST:event_btnAdminSearchDoctorActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+this.setVisible(false);
+         new MainPage().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,6 +195,7 @@ public class SystemAdminHospitalTask extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdminAddDcotor;
     private javax.swing.JButton btnAdminSearchDoctor;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSplitPane jSplitPane2;

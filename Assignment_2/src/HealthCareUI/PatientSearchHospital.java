@@ -7,8 +7,12 @@ package HealthCareUI;
 import HealthCare.City;
 import HealthCare.Community;
 import HealthCare.Doctor;
+import HealthCare.Encounter;
 import HealthCare.Hospital;
+import HealthCare.House;
+import HealthCare.Patient;
 import HealthCare.SystemAdmin;
+import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -19,15 +23,17 @@ import javax.swing.table.TableRowSorter;
  * @author pavan
  */
 public class PatientSearchHospital extends javax.swing.JPanel {
+    private Patient patient;
 private TableRowSorter<TableModel> sorter; 
     /**
      * Creates new form PatientSearchHospital
      */
-    public PatientSearchHospital() {
+    public PatientSearchHospital(Patient patient) {
         initComponents();
         fillTable();
         sorter = new TableRowSorter<TableModel>(jTable2.getModel());
         jTable2.setRowSorter(sorter);
+        this.patient = patient;
     }
 
     /**
@@ -174,7 +180,22 @@ private TableRowSorter<TableModel> sorter;
     }//GEN-LAST:event_searActionPerformed
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        if(jTable2.getSelectedRow()>-1 && jTable1.getSelectedRow()>-1){
+            Hospital c = (Hospital)jTable2.getValueAt(jTable2.getSelectedRow(), 4);
+            Doctor d = (Doctor)jTable1.getValueAt(jTable1.getSelectedRow(), 2);
+            Encounter e = new Encounter(d,this.patient); 
+            JOptionPane.showMessageDialog(null, "Appoointment Booked");
+        }
 
+//if(jTable1.getSelectedRow()>-1) {
+//          City c = (City)jTable1.getValueAt(jTable1.getSelectedRow(),1);
+//         Community b= new Community(communityName.getText(),c,user.getText(),pass.getText());
+//         SystemAdmin.communityList.add(b);
+//         fillTable1();
+//        }
+//        else{
+//             JOptionPane.showMessageDialog(null, "Please Select City");
+//        }
     }//GEN-LAST:event_searchActionPerformed
 
     private void search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search1ActionPerformed
@@ -193,8 +214,8 @@ private TableRowSorter<TableModel> sorter;
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
         // TODO add your handling code here:
-        if(jTable1.getSelectedRow()>-1){
-            Hospital c = (Hospital)jTable1.getValueAt(jTable1.getSelectedRow(), 4);
+        if(jTable2.getSelectedRow()>-1){
+            Hospital c = (Hospital)jTable2.getValueAt(jTable2.getSelectedRow(), 4);
             fillTable1(c);
         }
     
@@ -232,7 +253,8 @@ private void fillTable() {
 }
 
     private void fillTable1(Hospital c) {
-      DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+      DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+      System.out.println(SystemAdmin.doctorList);
        model.setRowCount(0);
        for(Doctor  p : SystemAdmin.doctorList ){
            if(p.hospital == c){

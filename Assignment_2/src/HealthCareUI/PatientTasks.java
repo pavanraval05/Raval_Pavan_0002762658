@@ -112,7 +112,7 @@ public class PatientTasks extends javax.swing.JFrame {
 
     private void btnAdminAddDcotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminAddDcotorActionPerformed
         // TODO add your handling code here:
-        jSplitPane2.setRightComponent(new PatientSearchHospital());
+        jSplitPane2.setRightComponent(new PatientSearchHospital(this.patient));
     }//GEN-LAST:event_btnAdminAddDcotorActionPerformed
 
     /**
