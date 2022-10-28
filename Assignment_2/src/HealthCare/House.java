@@ -9,5 +9,12 @@ package HealthCare;
  * @author pavan
  */
 public class House {
-    
+   public int houseNo;
+   public Community community;
+
+    public House(int houseNo, Community community) {
+        this.houseNo = houseNo;
+        this.community = community;
+    }
+
 }

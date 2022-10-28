@@ -50,9 +50,19 @@ public class SystemAdminHospitalTask extends javax.swing.JFrame {
 
         btnAdminSearchDoctor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         btnAdminSearchDoctor.setText("Search Hospital");
+        btnAdminSearchDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminSearchDoctorActionPerformed(evt);
+            }
+        });
 
         btnAdminViewDoctor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         btnAdminViewDoctor.setText("View Hospital");
+        btnAdminViewDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminViewDoctorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -116,7 +126,21 @@ public class SystemAdminHospitalTask extends javax.swing.JFrame {
 
     private void btnAdminAddDcotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminAddDcotorActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        new SystemAdminAddHospitalJPanel().setVisible(true);
     }//GEN-LAST:event_btnAdminAddDcotorActionPerformed
+
+    private void btnAdminViewDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminViewDoctorActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new SystemAdminViewHospitalJPanel().setVisible(true);
+    }//GEN-LAST:event_btnAdminViewDoctorActionPerformed
+
+    private void btnAdminSearchDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminSearchDoctorActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new SystemAdminSearchHospitalJPanel().setVisible(true);
+    }//GEN-LAST:event_btnAdminSearchDoctorActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,6 +4,13 @@
  */
 package HealthCareUI;
 
+import HealthCare.City;
+import HealthCare.Community;
+import HealthCare.Patient;
+import HealthCare.SystemAdmin;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author pavan
@@ -15,6 +22,7 @@ public class CommunityAddCommunity extends javax.swing.JPanel {
      */
     public CommunityAddCommunity() {
         initComponents();
+       
     }
 
     /**
@@ -59,13 +67,13 @@ public class CommunityAddCommunity extends javax.swing.JPanel {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Community Name", "Community Object"
+                "Community Name", "CIty", "Community Object"
             }
         ));
         jScrollPane2.setViewportView(jTable2);
@@ -124,6 +132,7 @@ public class CommunityAddCommunity extends javax.swing.JPanel {
 
     private void btnAdminAddDcotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminAddDcotorActionPerformed
         // TODO add your handling code here:
+       
     }//GEN-LAST:event_btnAdminAddDcotorActionPerformed
 
 
@@ -136,4 +145,5 @@ public class CommunityAddCommunity extends javax.swing.JPanel {
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField name;
     // End of variables declaration//GEN-END:variables
+
 }

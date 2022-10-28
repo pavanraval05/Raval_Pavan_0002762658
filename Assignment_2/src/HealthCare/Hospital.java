@@ -16,8 +16,15 @@ public class Hospital {
     private int hostipalID;
     private Community belongsToCummunity;
     List<Doctor>doctors;
+
+    public Hospital(String hospitalName, int hostipalID, Community belongsToCummunity, List<Doctor> doctors) {
+        this.hospitalName = hospitalName;
+        this.hostipalID = hostipalID;
+        this.belongsToCummunity = belongsToCummunity;
+        this.doctors = doctors;
+    }
     
-    
+   
     
     
 }

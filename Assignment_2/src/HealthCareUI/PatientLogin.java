@@ -4,6 +4,9 @@
  */
 package HealthCareUI;
 
+import HealthCare.Doctor;
+import HealthCare.Patient;
+import HealthCare.SystemAdmin;
 import javax.swing.JOptionPane;
 
 /**
@@ -116,20 +119,21 @@ public class PatientLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String user;
+           String user;
         String pass;
         user=username.getText();
         pass=password.getText();
 //        adminpanel p=new adminpanel();
-        if(user.equals("admin")&&pass.equals("admin"))
-        {
-            this.dispose();
-//            p.setVisible(true);
-        }
-        else
-        {
+         for(Patient temp:SystemAdmin.patientList){
+            if(temp.verify(user, pass)) {
+                this.dispose();
+                this.setVisible(false);
+        new PatientTasks(temp).setVisible(true);
+        return;}
             JOptionPane.showMessageDialog(this,"Incorrect Admin Username & Password");
         }
+                                        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

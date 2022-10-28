@@ -11,7 +11,18 @@ package HealthCare;
 public class Community {
     private String communityName;
     private City city;
-    private String houseList;
+
+    @Override
+    public String toString() {
+        return "Community{" + "communityName=" + communityName + ", city=" + city + '}';
+    }
+   
+
+    public Community(String communityName, City city) {
+        this.communityName = communityName;
+        this.city = city;
+       
+    }
 
     public String getCommunityName() {
         return communityName;

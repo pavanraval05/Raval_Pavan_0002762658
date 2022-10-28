@@ -21,6 +21,7 @@ public class SystemAdminViewPatientJPanel extends javax.swing.JPanel {
      */
     public SystemAdminViewPatientJPanel() {
         initComponents();
+        fillTable();
     }
 
     /**
@@ -86,13 +87,10 @@ public class SystemAdminViewPatientJPanel extends javax.swing.JPanel {
 
         patientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "ID", "NAME", "GENDER", "CITY", "COMMUNITY", "USERNAME", "PASSWORD"
+                "ID", "NAME", "GENDER", "CITY", "COMMUNITY", "USERNAME", "PASSWORD", "Patient Obj"
             }
         ));
         patientTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -343,6 +341,16 @@ DefaultTableModel model = (DefaultTableModel) patientTable.getModel();
 
     private void patientTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_patientTableMouseClicked
         // TODO add your handling code here:
+          DefaultTableModel model = (DefaultTableModel)patientTable.getModel();
+        Patient p = (Patient)model.getValueAt(patientTable.getSelectedRow(), 7);
+        patientID.setText(String.valueOf(p.patientID));
+        name.setText(p.name);
+        gender.setText(p.gender);
+        
+        city.setText(p.city);
+        community.setText(p.community);
+        user.setText(p.username);
+        pass.setText(p.password);
                                      
 
     }//GEN-LAST:event_patientTableMouseClicked
@@ -395,7 +403,7 @@ DefaultTableModel model = (DefaultTableModel) patientTable.getModel();
        model.setRowCount(0);
        for(Patient  p : SystemAdmin.patientList ){
            
-           Object[] row = new Object[9];
+           Object[] row = new Object[8];
            row[0]= p.patientID;
            row[1]= p.name;
            row[2]= p.gender;

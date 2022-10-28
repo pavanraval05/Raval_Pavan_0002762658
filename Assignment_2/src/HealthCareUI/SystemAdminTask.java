@@ -257,12 +257,16 @@ public class SystemAdminTask extends javax.swing.JFrame {
         //        receptionistdetails rd=new receptionistdetails();
         //        rd.setVisible(true);
         //        this.setVisible(false);        // TODO add your handling code here:
+        this.setVisible(false);
+        new SystemAdminCommunityTask().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         //        PatientDetails pd=new PatientDetails();
         //        pd.setVisible(true);
         //        this.dispose();
+        this.setVisible(false);
+        new SystemAdminHospitalTask().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

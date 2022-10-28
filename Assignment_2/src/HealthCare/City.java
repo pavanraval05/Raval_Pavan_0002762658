@@ -11,9 +11,19 @@ import java.util.List;
  * @author pavan
  */
 public class City {
-    private String cityName;
-    private int zipCode;
-    private String  hospitalList;
+    public String cityName;
+    public int zipCode;
+
+    public City(String cityName, int zipCode) {
+        this.cityName = cityName;
+        this.zipCode = zipCode;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" + "cityName=" + cityName + ", zipCode=" + zipCode + '}';
+    }
+   
     
     
     

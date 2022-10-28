@@ -32,6 +32,7 @@ public class SystemAdminDoctorTask extends javax.swing.JFrame {
         btnAdminSearchDoctor = new javax.swing.JButton();
         btnAdminViewDoctor = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,7 +101,7 @@ public class SystemAdminDoctorTask extends javax.swing.JFrame {
                 .addComponent(btnAdminViewDoctor)
                 .addGap(55, 55, 55)
                 .addComponent(btnAdminSearchDoctor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(27, 27, 27))
         );
@@ -108,6 +109,9 @@ public class SystemAdminDoctorTask extends javax.swing.JFrame {
         jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAdminAddDcotor, btnAdminSearchDoctor, btnAdminViewDoctor});
 
         jSplitPane2.setLeftComponent(jPanel3);
+
+        jTabbedPane1.setBackground(new java.awt.Color(51, 204, 255));
+        jSplitPane2.setRightComponent(jTabbedPane1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -196,5 +200,6 @@ public class SystemAdminDoctorTask extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSplitPane jSplitPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }

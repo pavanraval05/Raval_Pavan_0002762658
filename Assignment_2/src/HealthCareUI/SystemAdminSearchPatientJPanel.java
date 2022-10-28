@@ -4,17 +4,28 @@
  */
 package HealthCareUI;
 
+import HealthCare.Doctor;
+import HealthCare.Patient;
+import HealthCare.SystemAdmin;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author pavan
  */
 public class SystemAdminSearchPatientJPanel extends javax.swing.JPanel {
-
+private TableRowSorter<TableModel> sorter; 
     /**
      * Creates new form AdminDoctorJPanel
      */
     public SystemAdminSearchPatientJPanel() {
         initComponents();
+         fillTable();
+        sorter = new TableRowSorter<TableModel>(patientTable.getModel());
+        patientTable.setRowSorter(sorter);
     }
 
     /**
@@ -26,16 +37,22 @@ public class SystemAdminSearchPatientJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        doctorid = new javax.swing.JTextField();
+        search = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        patientTable = new javax.swing.JTable();
         search1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(doctorid, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 110, 336, 32));
+
+        search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                searchKeyReleased(evt);
+            }
+        });
+        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 110, 336, 32));
 
         jPanel1.setBackground(new java.awt.Color(93, 154, 244));
 
@@ -61,21 +78,21 @@ public class SystemAdminSearchPatientJPanel extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 16, -1, -1));
 
-        jTable1.setBackground(new java.awt.Color(204, 255, 255));
-        jTable1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 102, 204));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        patientTable.setBackground(new java.awt.Color(204, 255, 255));
+        patientTable.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        patientTable.setForeground(new java.awt.Color(0, 102, 204));
+        patientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "NAME", "GENDER", "CITY", "USERNAME", "PASSWORD"
+                "ID", "NAME", "GENDER", "CITY", "USERNAME", "PASSWORD", "patient Obj"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(patientTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 228, 790, 481));
 
@@ -99,14 +116,40 @@ public class SystemAdminSearchPatientJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_search1ActionPerformed
 
+    private void searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyReleased
+        // TODO add your handling code here:
+        String textBoxString = search.getText();
+        sorter.setRowFilter(RowFilter.regexFilter(textBoxString));
+      
+    }//GEN-LAST:event_searchKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField doctorid;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable patientTable;
+    private javax.swing.JTextField search;
     private javax.swing.JButton search1;
     // End of variables declaration//GEN-END:variables
-}
+
+private void fillTable() {
+       DefaultTableModel model = (DefaultTableModel)patientTable.getModel();
+       model.setRowCount(0);
+       for(Patient  p : SystemAdmin.patientList ){
+           
+           Object[] row = new Object[8];
+           row[0]= p.patientID;
+           row[1]= p.name;
+           row[2]= p.gender;
+           
+           row[3]= p.city;
+           row[4]= p.community;
+           row[5]= p.username;
+           row[6]= p.password;
+           row[7]= p;
+           
+           
+           model.addRow(row);
+       }}}

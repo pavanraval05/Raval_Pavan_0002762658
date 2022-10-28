@@ -4,7 +4,10 @@
  */
 package HealthCareUI;
 
+import HealthCare.Doctor;
+import HealthCare.SystemAdmin;
 import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
@@ -20,9 +23,9 @@ public class SystemAdminSearchDoctorJPanel extends javax.swing.JPanel {
      */
     public SystemAdminSearchDoctorJPanel() {
         initComponents();
-        
-        sorter = new TableRowSorter<TableModel>(searhDoctor.getModel());
-        searhDoctor.setRowSorter(sorter);
+        fillTable();
+        sorter = new TableRowSorter<TableModel>(jTable1.getModel());
+        jTable1.setRowSorter(sorter);
     }
 
     /**
@@ -37,10 +40,10 @@ public class SystemAdminSearchDoctorJPanel extends javax.swing.JPanel {
         search = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        searhDoctor = new javax.swing.JTable();
         search1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -80,24 +83,6 @@ public class SystemAdminSearchDoctorJPanel extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 16, -1, -1));
 
-        searhDoctor.setBackground(new java.awt.Color(204, 255, 255));
-        searhDoctor.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        searhDoctor.setForeground(new java.awt.Color(0, 102, 204));
-        searhDoctor.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "NAME", "CITY", "COMMUNITY", "ZIP CODE", "USERNAME", "PASSWORD"
-            }
-        ));
-        jScrollPane1.setViewportView(searhDoctor);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 228, 790, 481));
-
         search1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search1.setForeground(new java.awt.Color(0, 102, 204));
         search1.setText("SEARCH HOSPITAL");
@@ -112,6 +97,26 @@ public class SystemAdminSearchDoctorJPanel extends javax.swing.JPanel {
         jComboBox1.setForeground(new java.awt.Color(0, 102, 204));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NAME", "CITY", "ZIP CODE", "COMMUNITY", "USERNAME" }));
         add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 111, -1, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "NAME", "GENDER", "DEPARTMENT", "CITY", "COMMUNITY", "USERNAMEl", "PASSWORD", "DoctorObject"
+            }
+        ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 840, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search1ActionPerformed
@@ -132,14 +137,40 @@ public class SystemAdminSearchDoctorJPanel extends javax.swing.JPanel {
     
     }//GEN-LAST:event_searchKeyReleased
 
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        Doctor p = (Doctor)model.getValueAt(jTable1.getSelectedRow(), 8);
+     
+
+    }//GEN-LAST:event_jTable1MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField search;
     private javax.swing.JButton search1;
-    private javax.swing.JTable searhDoctor;
     // End of variables declaration//GEN-END:variables
-}
+private void fillTable() {
+       DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+       model.setRowCount(0);
+       for(Doctor  p : SystemAdmin.doctorList ){
+           
+           Object[] row = new Object[9];
+           row[0]= p.doctorID;
+           row[1]= p.name;
+           row[2]= p.gender;
+           row[3]= p.department;
+           row[4]= p.city;
+           row[5]= p.community;
+           row[6]= p.username;
+           row[7]= p.password;
+           row[8]= p;
+           
+           
+           model.addRow(row);
+       }}}

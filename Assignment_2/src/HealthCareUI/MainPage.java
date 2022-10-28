@@ -66,9 +66,19 @@ public class MainPage extends javax.swing.JFrame {
         jPanel1.add(btnDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 610, 150, 70));
 
         btnPatient.setText("Patient");
+        btnPatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPatientActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 610, 150, 66));
 
         btnCommunityAdmin.setText("Community Admin");
+        btnCommunityAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCommunityAdminActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnCommunityAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 610, -1, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/HealthCareUI/admin.png"))); // NOI18N
@@ -87,6 +97,11 @@ public class MainPage extends javax.swing.JFrame {
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 450, 140, 130));
 
         btnCommunityAdmin1.setText(" Hospital Admin");
+        btnCommunityAdmin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCommunityAdmin1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnCommunityAdmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 610, -1, 60));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/HealthCareUI/recept.back.png"))); // NOI18N
@@ -119,6 +134,24 @@ public class MainPage extends javax.swing.JFrame {
          this.setVisible(false);
         new DoctorLogin().setVisible(true); 
     }//GEN-LAST:event_btnDoctorActionPerformed
+
+    private void btnCommunityAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommunityAdminActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new CommunityLogin().setVisible(true);
+    }//GEN-LAST:event_btnCommunityAdminActionPerformed
+
+    private void btnCommunityAdmin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommunityAdmin1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new HospitalAdminLogin().setVisible(true);
+    }//GEN-LAST:event_btnCommunityAdmin1ActionPerformed
+
+    private void btnPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new PatientLogin().setVisible(true);
+    }//GEN-LAST:event_btnPatientActionPerformed
 
     /**
      * @param args the command line arguments

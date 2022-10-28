@@ -11,8 +11,8 @@ import javax.swing.JOptionPane;
  * @author pavan
  */
 public class SystemAdminLogin extends javax.swing.JFrame {
-    private static String systemUserName = "sysAdmin";
-    private static String systemPassword = "sysPass";
+    private static String systemUserName = "";// "sysAdmin";
+    private static String systemPassword = "";// "sysPass";
     
     /**
      * Creates new form SystemAdminPage

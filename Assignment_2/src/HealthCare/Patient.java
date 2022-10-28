@@ -21,6 +21,10 @@ public class Patient  {
    public String city;
    public String community;
    public int patientID;
+   
+   public boolean verify(String username,String password){
+       if(this.username.equals(username) && this.password.equals(password) )return true;
+       return false;}
 
     public Patient(int patientID, String username, String password, String name, String gender, String city, String community) {
         this.username = username;

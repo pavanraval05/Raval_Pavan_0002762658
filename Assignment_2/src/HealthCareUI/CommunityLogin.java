@@ -121,15 +121,18 @@ public class CommunityLogin extends javax.swing.JFrame {
         user=username.getText();
         pass=password.getText();
 //        adminpanel p=new adminpanel();
-        if(user.equals("admin")&&pass.equals("admin"))
+        if(user.equals(username)&&pass.equals(password))
         {
             this.dispose();
 //            p.setVisible(true);
+  this.setVisible(false);
+        new CommunityAdminTask().setVisible(true); 
         }
         else
         {
             JOptionPane.showMessageDialog(this,"Incorrect Admin Username & Password");
         }
+    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
