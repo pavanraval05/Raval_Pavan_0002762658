@@ -39,6 +39,7 @@ public class PatientTasks extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         btnAdminAddDcotor = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnAdminAddDcotor1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,18 +57,30 @@ public class PatientTasks extends javax.swing.JFrame {
             }
         });
 
+        btnAdminAddDcotor1.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
+        btnAdminAddDcotor1.setText("Encounter History");
+        btnAdminAddDcotor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminAddDcotor1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addComponent(btnAdminAddDcotor)
-                .addGap(23, 23, 23))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(73, 73, 73)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAdminAddDcotor)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnAdminAddDcotor1)
+                        .addGap(10, 10, 10)))
+                .addGap(23, 23, 23))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,7 +89,9 @@ public class PatientTasks extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(220, 220, 220)
                 .addComponent(btnAdminAddDcotor, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(403, Short.MAX_VALUE))
+                .addGap(50, 50, 50)
+                .addComponent(btnAdminAddDcotor1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(297, Short.MAX_VALUE))
         );
 
         jSplitPane2.setLeftComponent(jPanel3);
@@ -114,6 +129,11 @@ public class PatientTasks extends javax.swing.JFrame {
         // TODO add your handling code here:
         jSplitPane2.setRightComponent(new PatientSearchHospital(this.patient));
     }//GEN-LAST:event_btnAdminAddDcotorActionPerformed
+
+    private void btnAdminAddDcotor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminAddDcotor1ActionPerformed
+        // TODO add your handling code here:
+        jSplitPane2.setRightComponent(new PatientEncounterHistory(this.patient));
+    }//GEN-LAST:event_btnAdminAddDcotor1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,6 +187,7 @@ public class PatientTasks extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdminAddDcotor;
+    private javax.swing.JButton btnAdminAddDcotor1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

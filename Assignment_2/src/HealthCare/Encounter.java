@@ -11,10 +11,12 @@ package HealthCare;
 public class Encounter {
     public Doctor doctor;
     public Patient patient;
+    public String vitalSigns;
 
     public Encounter(Doctor doctor, Patient patient) {
         this.doctor = doctor;
         this.patient = patient;
+        vitalSigns = "";
     }
     
 }
