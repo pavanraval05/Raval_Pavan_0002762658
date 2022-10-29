@@ -6,6 +6,7 @@ package HealthCareUI;
 
 import HealthCare.Doctor;
 import HealthCare.Encounter;
+import HealthCare.Hospital;
 import HealthCare.Patient;
 import HealthCare.SystemAdmin;
 import javax.swing.JOptionPane;
@@ -24,6 +25,7 @@ public Doctor doctor;
     public DoctorViewAppointment(Doctor p) {
         initComponents();
         doctor=p;
+        fillTable();
     }
 
     /**
@@ -210,9 +212,18 @@ public Doctor doctor;
 
     }// </editor-fold>//GEN-END:initComponents
 
+//            Hospital c = (Hospital)jTable2.getValueAt(jTable2.getSelectedRow(), 4);
+//            Doctor d = (Doctor)jTable1.getValueAt(jTable1.getSelectedRow(), 2);
+//            Encounter e = new Encounter(d,this.patient);
+//            SystemAdmin.encounterList.add(e);
+//           
+//            JOptionPane.showMessageDialog(null, "Appoointment Booked");
+//        }
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        if(jTable1.getSelectedRow()>-1 ){
+            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        
         Encounter p = (Encounter)model.getValueAt(jTable1.getSelectedRow(), 6);
         patientID.setText(String.valueOf(p.patient.patientID));
         
@@ -221,7 +232,7 @@ public Doctor doctor;
         
         patientCity.setText(p.patient.city);
         patientCommunity.setText(p.patient.community);
-        
+        } 
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void patientCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientCityActionPerformed

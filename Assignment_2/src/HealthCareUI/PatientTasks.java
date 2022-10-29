@@ -39,7 +39,8 @@ public class PatientTasks extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         btnAdminAddDcotor = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnAdminAddDcotor1 = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
+        btnAdminAddDcotor2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,11 +58,19 @@ public class PatientTasks extends javax.swing.JFrame {
             }
         });
 
-        btnAdminAddDcotor1.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
-        btnAdminAddDcotor1.setText("Encounter History");
-        btnAdminAddDcotor1.addActionListener(new java.awt.event.ActionListener() {
+        Back.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
+        Back.setText("Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdminAddDcotor1ActionPerformed(evt);
+                BackActionPerformed(evt);
+            }
+        });
+
+        btnAdminAddDcotor2.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
+        btnAdminAddDcotor2.setText("Encounter History");
+        btnAdminAddDcotor2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminAddDcotor2ActionPerformed(evt);
             }
         });
 
@@ -76,11 +85,15 @@ public class PatientTasks extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAdminAddDcotor)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnAdminAddDcotor1)
-                        .addGap(10, 10, 10)))
-                .addGap(23, 23, 23))
+                        .addComponent(btnAdminAddDcotor)
+                        .addGap(23, 23, 23))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(Back)
+                        .addGap(86, 86, 86))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnAdminAddDcotor2)
+                        .addGap(38, 38, 38))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,9 +102,11 @@ public class PatientTasks extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(220, 220, 220)
                 .addComponent(btnAdminAddDcotor, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(btnAdminAddDcotor1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnAdminAddDcotor2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(145, 145, 145))
         );
 
         jSplitPane2.setLeftComponent(jPanel3);
@@ -130,10 +145,16 @@ public class PatientTasks extends javax.swing.JFrame {
         jSplitPane2.setRightComponent(new PatientSearchHospital(this.patient));
     }//GEN-LAST:event_btnAdminAddDcotorActionPerformed
 
-    private void btnAdminAddDcotor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminAddDcotor1ActionPerformed
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
-        jSplitPane2.setRightComponent(new PatientEncounterHistory(this.patient));
-    }//GEN-LAST:event_btnAdminAddDcotor1ActionPerformed
+        this.setVisible(false);
+        new MainPage().setVisible(true);
+    }//GEN-LAST:event_BackActionPerformed
+
+    private void btnAdminAddDcotor2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminAddDcotor2ActionPerformed
+        // TODO add your handling code here:
+         jSplitPane2.setRightComponent(new PatientEncounterHistory(this.patient));
+    }//GEN-LAST:event_btnAdminAddDcotor2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,8 +207,9 @@ public class PatientTasks extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
     private javax.swing.JButton btnAdminAddDcotor;
-    private javax.swing.JButton btnAdminAddDcotor1;
+    private javax.swing.JButton btnAdminAddDcotor2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
