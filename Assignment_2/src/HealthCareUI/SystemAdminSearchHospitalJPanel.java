@@ -44,6 +44,7 @@ private TableRowSorter<TableModel> sorter;
         jTable1 = new javax.swing.JTable();
         search1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -67,7 +68,7 @@ private TableRowSorter<TableModel> sorter;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(442, Short.MAX_VALUE))
+                .addContainerGap(702, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,7 +77,7 @@ private TableRowSorter<TableModel> sorter;
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 16, -1, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 16, 1060, -1));
 
         jTable1.setBackground(new java.awt.Color(204, 255, 255));
         jTable1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -110,6 +111,9 @@ private TableRowSorter<TableModel> sorter;
         jComboBox1.setForeground(new java.awt.Color(0, 102, 204));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NAME", "CITY", "ZIP CODE", "COMMUNITY", "USERNAME" }));
         add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 111, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/6.jpg")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 770));
     }// </editor-fold>//GEN-END:initComponents
 
     private void search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search1ActionPerformed
@@ -127,6 +131,7 @@ private TableRowSorter<TableModel> sorter;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

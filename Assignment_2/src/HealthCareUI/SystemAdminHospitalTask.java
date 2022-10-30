@@ -31,7 +31,9 @@ public class SystemAdminHospitalTask extends javax.swing.JFrame {
         btnAdminAddDcotor = new javax.swing.JButton();
         btnAdminSearchDoctor = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,6 +41,7 @@ public class SystemAdminHospitalTask extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(102, 255, 255));
         jPanel3.setPreferredSize(new java.awt.Dimension(100, 200));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnAdminAddDcotor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         btnAdminAddDcotor.setText("Add Hospital");
@@ -47,6 +50,7 @@ public class SystemAdminHospitalTask extends javax.swing.JFrame {
                 btnAdminAddDcotorActionPerformed(evt);
             }
         });
+        jPanel3.add(btnAdminAddDcotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 227, 144, 56));
 
         btnAdminSearchDoctor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         btnAdminSearchDoctor.setText("Search Hospital");
@@ -55,6 +59,7 @@ public class SystemAdminHospitalTask extends javax.swing.JFrame {
                 btnAdminSearchDoctorActionPerformed(evt);
             }
         });
+        jPanel3.add(btnAdminSearchDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 367, -1, 56));
 
         jButton1.setText("back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -62,54 +67,18 @@ public class SystemAdminHospitalTask extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 609, -1, -1));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnAdminSearchDoctor)
-                            .addComponent(btnAdminAddDcotor)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jButton1)))
-                .addContainerGap(36, Short.MAX_VALUE))
-        );
-
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAdminAddDcotor, btnAdminSearchDoctor});
-
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(227, 227, 227)
-                .addComponent(btnAdminAddDcotor, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(168, 168, 168)
-                .addComponent(btnAdminSearchDoctor)
-                .addGap(109, 109, 109)
-                .addComponent(jButton1)
-                .addContainerGap(168, Short.MAX_VALUE))
-        );
-
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAdminAddDcotor, btnAdminSearchDoctor});
+        jLabel2.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/6.jpg")); // NOI18N
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 830));
 
         jSplitPane2.setLeftComponent(jPanel3);
 
         jPanel4.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 692, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 808, Short.MAX_VALUE)
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/6.jpg")); // NOI18N
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 830));
 
         jSplitPane2.setRightComponent(jPanel4);
 
@@ -117,11 +86,11 @@ public class SystemAdminHospitalTask extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 947, Short.MAX_VALUE)
+            .addComponent(jSplitPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1185, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSplitPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 827, Short.MAX_VALUE)
         );
 
         pack();
@@ -196,6 +165,8 @@ this.setVisible(false);
     private javax.swing.JButton btnAdminAddDcotor;
     private javax.swing.JButton btnAdminSearchDoctor;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSplitPane jSplitPane2;

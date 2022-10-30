@@ -69,7 +69,7 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
 
         addDoctor.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         addDoctor.setForeground(new java.awt.Color(0, 102, 204));
-        addDoctor.setText("ADD DOCTOR");
+        addDoctor.setText("ADD PATIENT");
         addDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addDoctorActionPerformed(evt);

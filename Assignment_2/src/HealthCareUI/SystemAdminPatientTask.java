@@ -96,11 +96,11 @@ public class SystemAdminPatientTask extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1167, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jSplitPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1161, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jSplitPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 817, Short.MAX_VALUE)
         );
 
         pack();

@@ -143,13 +143,13 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
         jTable1.setBackground(new java.awt.Color(204, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "NAME", "GENDER", "DEPARTMENT", "CITY", "COMMUNITY", "USERNAMEl", "PASSWORD", "DoctorObject"
+                "ID", "NAME", "GENDER", "DEPARTMENT", "USERNAMEl", "PASSWORD", "DoctorObject"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -245,7 +245,7 @@ DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
     private void search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search1ActionPerformed
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-        Doctor p = (Doctor)model.getValueAt(jTable1.getSelectedRow(), 8);
+        Doctor p = (Doctor)model.getValueAt(jTable1.getSelectedRow(), 6);
         if(p!= null){
             SystemAdmin.doctorList.remove(p);
             fillTable();
@@ -255,7 +255,7 @@ DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-        Doctor p = (Doctor)model.getValueAt(jTable1.getSelectedRow(), 8);
+        Doctor p = (Doctor)model.getValueAt(jTable1.getSelectedRow(), 6);
         doctorid.setText(String.valueOf(p.doctorID));
         firstname.setText(p.name);
         gender.setText(p.gender);
@@ -298,16 +298,16 @@ private void fillTable() {
        model.setRowCount(0);
        for(Doctor  p : SystemAdmin.doctorList ){
            
-           Object[] row = new Object[9];
+           Object[] row = new Object[7];
            row[0]= p.doctorID;
            row[1]= p.name;
            row[2]= p.gender;
            row[3]= p.department;
 //           row[4]= p.city;
 //           row[5]= p.community;
-           row[6]= p.username;
-           row[7]= p.password;
-           row[8]= p;
+           row[4]= p.username;
+           row[5]= p.password;
+           row[6]= p;
            
            
            model.addRow(row);
