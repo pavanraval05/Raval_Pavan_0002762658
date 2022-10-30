@@ -84,7 +84,7 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
                 updateActionPerformed(evt);
             }
         });
-        add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(526, 659, -1, 49));
+        add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 710, -1, 49));
 
         jLabel15.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 102, 204));
@@ -113,9 +113,9 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
                 passwordActionPerformed(evt);
             }
         });
-        add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, 192, 32));
+        add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, 192, 32));
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -128,7 +128,7 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(598, Short.MAX_VALUE))
+                .addContainerGap(772, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,10 +137,10 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 956, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, -1));
         add(department, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 590, 193, 32));
 
-        jTable1.setBackground(new java.awt.Color(204, 255, 255));
+        jTable1.setBackground(new java.awt.Color(102, 102, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -159,7 +159,7 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 94, 856, 294));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 94, 960, 294));
 
         search1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search1.setForeground(new java.awt.Color(0, 102, 204));
@@ -169,7 +169,7 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
                 search1ActionPerformed(evt);
             }
         });
-        add(search1, new org.netbeans.lib.awtextra.AbsoluteConstraints(656, 424, -1, 49));
+        add(search1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 420, -1, 49));
         add(community, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 620, 193, 32));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -183,8 +183,8 @@ public class SystemAdminViewDoctorJPanel1 extends javax.swing.JPanel {
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 620, 129, 35));
         add(city, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 560, 193, 32));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/1.jpg")); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 960, 720));
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/7.jpg")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1140, 820));
     }// </editor-fold>//GEN-END:initComponents
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed

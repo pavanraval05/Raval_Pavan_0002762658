@@ -61,7 +61,7 @@ public class SystemAdminCommunityAddCommunity extends javax.swing.JPanel {
                 communityNameActionPerformed(evt);
             }
         });
-        add(communityName, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, 193, 32));
+        add(communityName, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, 193, 32));
 
         jTable1.setBackground(new java.awt.Color(204, 204, 204));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -77,7 +77,7 @@ public class SystemAdminCommunityAddCommunity extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 580, 197));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 580, 197));
 
         jTable2.setBackground(new java.awt.Color(204, 204, 204));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -93,7 +93,7 @@ public class SystemAdminCommunityAddCommunity extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 510, 590, 197));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, 590, 197));
 
         btnAdminAddDcotor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         btnAdminAddDcotor.setText("Add Community");
@@ -102,7 +102,7 @@ public class SystemAdminCommunityAddCommunity extends javax.swing.JPanel {
                 btnAdminAddDcotorActionPerformed(evt);
             }
         });
-        add(btnAdminAddDcotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 440, -1, 56));
+        add(btnAdminAddDcotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, -1, 56));
 
         user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +114,7 @@ public class SystemAdminCommunityAddCommunity extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 204));
         jLabel4.setText("Community Name");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 450, 173, 35));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 173, 35));
 
         pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

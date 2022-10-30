@@ -52,14 +52,14 @@ public class SystemAdminCommunityAddHouse extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 204));
         jLabel3.setText("House No.");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 416, 122, 35));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 122, 35));
 
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameActionPerformed(evt);
             }
         });
-        add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 418, 193, 32));
+        add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 193, 32));
 
         btnAdminAddDcotor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         btnAdminAddDcotor.setText("Add House");
@@ -68,7 +68,7 @@ public class SystemAdminCommunityAddHouse extends javax.swing.JPanel {
                 btnAdminAddDcotorActionPerformed(evt);
             }
         });
-        add(btnAdminAddDcotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 408, -1, 56));
+        add(btnAdminAddDcotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, -1, 56));
 
         jTable3.setBackground(new java.awt.Color(204, 204, 204));
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
@@ -84,7 +84,7 @@ public class SystemAdminCommunityAddHouse extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(jTable3);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 487, 589, 197));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 589, 197));
 
         jTable1.setBackground(new java.awt.Color(204, 204, 204));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -105,7 +105,7 @@ public class SystemAdminCommunityAddHouse extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 22, -1, 197));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 22, 580, 197));
 
         jTable2.setBackground(new java.awt.Color(204, 204, 204));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -121,10 +121,10 @@ public class SystemAdminCommunityAddHouse extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(488, 182, 509, 197));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 580, 197));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/5.jpg")); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 700));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 780));
     }// </editor-fold>//GEN-END:initComponents
 
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed

@@ -62,8 +62,8 @@ public class SystemAdminViewHospitalJPanel extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel3.setText("First Name");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 532, 105, 35));
+        jLabel3.setText("FIRST NAME");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 532, 120, 35));
         add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 532, 193, 32));
 
         update.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N

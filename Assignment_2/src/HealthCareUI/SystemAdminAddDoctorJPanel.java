@@ -64,24 +64,28 @@ public class SystemAdminAddDoctorJPanel extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 255));
         jLabel4.setText("Doctor ID");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, -1, 35));
-        add(doctorid, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 160, 193, 32));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, 35));
+        add(doctorid, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 193, 32));
 
+        jLabel3.setBackground(new java.awt.Color(204, 255, 255));
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Name");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 105, 35));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 105, 35));
 
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameActionPerformed(evt);
             }
         });
-        add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 220, 193, 32));
+        add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 193, 32));
 
+        jLabel6.setBackground(new java.awt.Color(204, 255, 255));
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Gender");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 300, 105, 35));
-        add(age, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 300, 193, 32));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, 105, 35));
+        add(age, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, 193, 32));
 
         search.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search.setForeground(new java.awt.Color(0, 102, 204));
@@ -91,33 +95,39 @@ public class SystemAdminAddDoctorJPanel extends javax.swing.JPanel {
                 searchActionPerformed(evt);
             }
         });
-        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 620, -1, 49));
+        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 620, -1, 49));
 
+        jLabel15.setBackground(new java.awt.Color(204, 255, 255));
         jLabel15.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Department");
-        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 380, 118, 35));
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 118, 35));
 
+        jLabel19.setBackground(new java.awt.Color(204, 255, 255));
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Username");
-        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 450, 105, 35));
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, 105, 35));
 
+        jLabel17.setBackground(new java.awt.Color(204, 255, 255));
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Password");
-        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 520, 105, 35));
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 520, 105, 35));
 
         doctoruser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 doctoruserActionPerformed(evt);
             }
         });
-        add(doctoruser, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 450, 193, 32));
+        add(doctoruser, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 450, 193, 32));
 
         doctorpassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 doctorpasswordActionPerformed(evt);
             }
         });
-        add(doctorpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 520, 192, 32));
+        add(doctorpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 520, 192, 32));
 
         jPanel1.setBackground(new java.awt.Color(93, 154, 244));
 
@@ -142,7 +152,7 @@ public class SystemAdminAddDoctorJPanel extends javax.swing.JPanel {
         );
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 994, -1));
-        add(department, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 380, 193, 32));
+        add(department, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, 193, 32));
 
         jTable1.setBackground(new java.awt.Color(204, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -158,10 +168,10 @@ public class SystemAdminAddDoctorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 252, 374, 321));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 374, 321));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/1.jpg")); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 770));
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/7.jpg")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 840));
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed

@@ -70,7 +70,7 @@ public class SystemAdminViewPatientJPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel2.setText("View Patient");
+        jLabel2.setText("View Patients");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -79,7 +79,7 @@ public class SystemAdminViewPatientJPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(598, Short.MAX_VALUE))
+                .addContainerGap(792, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,7 +88,7 @@ public class SystemAdminViewPatientJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 956, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, -1));
 
         patientTable.setBackground(new java.awt.Color(204, 255, 255));
         patientTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -196,7 +196,7 @@ public class SystemAdminViewPatientJPanel extends javax.swing.JPanel {
         add(city, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 610, 193, 32));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/2.jpg")); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 48, 960, 790));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 48, 1160, 790));
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
@@ -214,7 +214,7 @@ DefaultTableModel model = (DefaultTableModel) patientTable.getModel();
        
        
         if(patientTable.getSelectedRowCount() == 1){
-          Patient p = (Patient)model.getValueAt(patientTable.getSelectedRow(), 8);
+          Patient p = (Patient)model.getValueAt(patientTable.getSelectedRow(), 7);
          
           p.patientID=Integer.parseInt(patientID.getText());
           p.city=city.getText();
@@ -268,16 +268,20 @@ DefaultTableModel model = (DefaultTableModel) patientTable.getModel();
     private void patientTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_patientTableMouseClicked
         // TODO add your handling code here:
         
-          DefaultTableModel model = (DefaultTableModel)patientTable.getModel();
-        Patient p = (Patient)model.getValueAt(patientTable.getSelectedRow(), 7);
-        patientID.setText(String.valueOf(p.patientID));
-        name.setText(p.name);
-        gender.setText(p.gender);
-        
-        city.setText(p.city);
-        community.setText(p.community);
-        user.setText(p.username);
-        pass.setText(p.password);
+        if(patientTable.getSelectedRow()>-1){   
+            DefaultTableModel model = (DefaultTableModel)patientTable.getModel();
+            Patient p = (Patient)model.getValueAt(patientTable.getSelectedRow(), 7);
+            patientID.setText(String.valueOf(p.patientID));
+            name.setText(p.name);
+            gender.setText(p.gender);
+
+            city.setText(p.city);
+            community.setText(p.community);
+            user.setText(p.username);
+            pass.setText(p.password);
+        }else{
+            JOptionPane.showMessageDialog(this,"Select the patient");
+        }
                                      
 
     }//GEN-LAST:event_patientTableMouseClicked

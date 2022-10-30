@@ -115,7 +115,7 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(463, Short.MAX_VALUE))
+                .addContainerGap(803, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,7 +124,7 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1140, -1));
         add(patientGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 193, 32));
 
         patientCity.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +139,7 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
         add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 105, 35));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/2.jpg")); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 800, 740));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1140, 800));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDoctorActionPerformed
