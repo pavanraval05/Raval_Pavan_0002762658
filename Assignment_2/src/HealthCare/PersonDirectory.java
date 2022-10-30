@@ -9,5 +9,38 @@ package HealthCare;
  * @author pavan
  */
 public class PersonDirectory {
+     private String perNme;
+    private String perComm;
+    private int personIiD;
+
+    public String getPerNme() {
+        return perNme;
+    }
+
+    public void setPerNme(String perNme) {
+        this.perNme = perNme;
+    }
+
+    public String getPerComm() {
+        return perComm;
+    }
+
+    public void setPerComm(String perComm) {
+        this.perComm = perComm;
+    }
+
+    public int getPersonIiD() {
+        return personIiD;
+    }
+
+    public void setPersonIiD(int personIiD) {
+        this.personIiD = personIiD;
+    }
+
+    public PersonDirectory(String perNme, String perComm, int personIiD) {
+        this.perNme = perNme;
+        this.perComm = perComm;
+        this.personIiD = personIiD;
+    }
     
 }
