@@ -11,12 +11,13 @@ import HealthCare.Hospital;
  * @author pavan
  */
 public class HospitalTask extends javax.swing.JFrame {
-
+private Hospital h;
     /**
      * Creates new form DoctorInfo
      */
     public HospitalTask(Hospital temp) {
         initComponents();
+        this.h=temp;
     }
 
     /**

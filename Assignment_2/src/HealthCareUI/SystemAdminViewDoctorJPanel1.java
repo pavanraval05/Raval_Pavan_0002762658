@@ -202,7 +202,7 @@ DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
        
        
         if(jTable1.getSelectedRowCount() == 1){
-          Doctor p = (Doctor)model.getValueAt(jTable1.getSelectedRow(), 8);
+          Doctor p = (Doctor)model.getValueAt(jTable1.getSelectedRow(), 6);
          
           p.doctorID=Integer.parseInt( doctorid.getText());
 //          p.city=city.getText();

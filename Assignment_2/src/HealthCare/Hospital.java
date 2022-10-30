@@ -59,8 +59,8 @@ public class Hospital {
     private Community belongsToCummunity;
 
     public boolean verify(String user, String pass) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+        if(this.username.equals(username) && this.password.equals(password) )return true;
+       return false;}
    
 }
     
