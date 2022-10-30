@@ -59,7 +59,7 @@ public Doctor doctor;
 
         jLabel1.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         jLabel1.setText("Appointments");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 48, 128, 39));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 128, 39));
 
         jTable1.setBackground(new java.awt.Color(204, 204, 204));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -80,7 +80,7 @@ public Doctor doctor;
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 105, 918, 294));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 918, 294));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 255));
@@ -123,12 +123,12 @@ public Doctor doctor;
                 patientPass1ActionPerformed(evt);
             }
         });
-        add(patientPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(659, 544, 192, 35));
+        add(patientPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 520, 192, 35));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(0, 102, 204));
         jLabel20.setText("Vital Signs");
-        add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 543, 105, 35));
+        add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, 105, 35));
 
         search.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search.setForeground(new java.awt.Color(0, 102, 204));
@@ -140,8 +140,8 @@ public Doctor doctor;
         });
         add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(594, 625, 147, 49));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/22.jpg")); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 840));
+        jLabel2.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/1111.jpg")); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 840));
     }// </editor-fold>//GEN-END:initComponents
 
 //            Hospital c = (Hospital)jTable2.getValueAt(jTable2.getSelectedRow(), 4);

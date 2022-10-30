@@ -7,6 +7,7 @@ package HealthCareUI;
 import HealthCare.Doctor;
 import HealthCare.Patient;
 import HealthCare.SystemAdmin;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -143,7 +144,42 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDoctorActionPerformed
-int id = Integer.parseInt(patientID.getText());
+if(!Pattern.compile("[a-zA-Z ]+").matcher(patientName.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "Please enter valid name");
+            return;
+//            ([a-z].[0-9])|([0-9].[a-z])
+//           
+        }
+        
+        if(!Pattern.compile("[a-zA-Z ]+").matcher(patientGender.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "Please enter valid Gender");
+            return;
+        }
+        if(!Pattern.compile("[0-9]*$").matcher(patientID.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "Please enter valid ID");
+            return;
+            
+        }
+        if(!Pattern.compile("[a-zA-Z ]+").matcher(patientCommunity.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "please enter valid Community");
+            return;
+       
+        }
+        if(!Pattern.compile("[a-zA-Z ]+").matcher(patientCity.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "please enter valid City");
+            return;
+        }if(!Pattern.compile("^[a-zA-Z0-9._-]{3,}$").matcher(patientUser.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "6");
+            return;
+        }if(!Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$").matcher(patientPass.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "    Password must contain at least one digit [0-9].\n" +
+"    Password must contain at least one lowercase Latin character [a-z].\n" +
+"    Password must contain at least one uppercase Latin character [A-Z].\n" +
+"    Password must contain at least one special character like ! @ # & ( ).\n" +
+"    Password must contain a length of at least 8 characters and a maximum of 20 characters.");
+            return;
+        }
+        int id = Integer.parseInt(patientID.getText());
 //         String name = name.getText();
          Patient patient = new Patient(id, patientUser.getText(), patientPass.getText(), patientName.getText(), patientCommunity.getText(), patientCity.getText(), patientCommunity.getText());
          SystemAdmin.patientList.add(patient);

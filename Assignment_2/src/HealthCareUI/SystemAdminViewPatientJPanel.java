@@ -7,6 +7,7 @@ package HealthCareUI;
 import HealthCare.Doctor;
 import HealthCare.Patient;
 import HealthCare.SystemAdmin;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -106,7 +107,7 @@ public class SystemAdminViewPatientJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(patientTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 724, 294));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 724, 294));
 
         search1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search1.setForeground(new java.awt.Color(0, 102, 204));
@@ -200,7 +201,36 @@ public class SystemAdminViewPatientJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-DefaultTableModel model = (DefaultTableModel) patientTable.getModel();
+if(!Pattern.compile("[a-zA-Z ]+").matcher(name.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "Please enter valid name");
+            return;
+//            ([a-z].[0-9])|([0-9].[a-z])
+//           
+        }
+        
+        if(!Pattern.compile("[a-zA-Z ]+").matcher(gender.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "Please enter valid Gender");
+            return;
+        }
+        if(!Pattern.compile("[0-9]*$").matcher(patientID.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "Please enter valid ID");
+            return;
+            
+        }
+        if(!Pattern.compile("[a-zA-Z ]+").matcher(community.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "please enter valid Community");
+            return;
+       
+        }
+        if(!Pattern.compile("[a-zA-Z ]+").matcher(city.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "please enter valid City");
+            return;
+        }if(!Pattern.compile("^[a-zA-Z0-9._-]{3,}$").matcher(user.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "6");
+            return;
+        }
+       
+        DefaultTableModel model = (DefaultTableModel) patientTable.getModel();
         int selectedRowIndex = patientTable.getSelectedRow();
        
         if (selectedRowIndex<0){

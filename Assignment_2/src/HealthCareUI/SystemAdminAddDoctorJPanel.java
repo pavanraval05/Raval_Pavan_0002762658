@@ -9,6 +9,7 @@ import HealthCare.Community;
 import HealthCare.Doctor;
 import HealthCare.Hospital;
 import HealthCare.SystemAdmin;
+import java.util.regex.Pattern;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -45,7 +46,7 @@ public class SystemAdminAddDoctorJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        age = new javax.swing.JTextField();
+        gender = new javax.swing.JTextField();
         search = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -65,6 +66,12 @@ public class SystemAdminAddDoctorJPanel extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(0, 102, 255));
         jLabel4.setText("Doctor ID");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, 35));
+
+        doctorid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                doctoridActionPerformed(evt);
+            }
+        });
         add(doctorid, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 193, 32));
 
         jLabel3.setBackground(new java.awt.Color(204, 255, 255));
@@ -85,7 +92,7 @@ public class SystemAdminAddDoctorJPanel extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Gender");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, 105, 35));
-        add(age, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, 193, 32));
+        add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, 193, 32));
 
         search.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search.setForeground(new java.awt.Color(0, 102, 204));
@@ -175,10 +182,43 @@ public class SystemAdminAddDoctorJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+if(!Pattern.compile("[a-zA-Z ]+").matcher(name.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "Please enter valid name");
+            return;
+//            ([a-z].[0-9])|([0-9].[a-z])
+//           
+        }
+        
+        if(!Pattern.compile("[a-zA-Z ]+").matcher(gender.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "Please enter valid Gender");
+            return;
+        }
+        if(!Pattern.compile("[0-9]*$").matcher(doctorid.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "Please enter valid ID");
+            return;
+            
+        }
+        if(!Pattern.compile("[a-zA-Z ]+").matcher(department.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "please enter valid Department");
+            return;
+       
+        }
+        
+        if(!Pattern.compile("^[a-zA-Z0-9._-]{3,}$").matcher(doctoruser.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "6");
+            return;
+        }if(!Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$").matcher(doctorpassword.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "    Password must contain at least one digit [0-9].\n" +
+"    Password must contain at least one lowercase Latin character [a-z].\n" +
+"    Password must contain at least one uppercase Latin character [A-Z].\n" +
+"    Password must contain at least one special character like ! @ # & ( ).\n" +
+"    Password must contain a length of at least 8 characters and a maximum of 20 characters.");
+            return;
+        }
         if(jTable1.getSelectedRow()>-1){
         int id = Integer.parseInt(doctorid.getText());
          String name1 = name.getText();
-         Doctor doctor = new Doctor(id, doctoruser.getText(), doctorpassword.getText(), name.getText(), age.getText(), department.getText(),(Hospital)jTable1.getValueAt(jTable1.getSelectedRow(), 1));
+         Doctor doctor = new Doctor(id, doctoruser.getText(), doctorpassword.getText(), name.getText(), gender.getText(), department.getText(),(Hospital)jTable1.getValueAt(jTable1.getSelectedRow(), 1));
          SystemAdmin.doctorList.add(doctor);
          JOptionPane.showMessageDialog(null, "Added Doctor");
         }
@@ -204,13 +244,17 @@ public class SystemAdminAddDoctorJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
 
+    private void doctoridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctoridActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_doctoridActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField age;
     private javax.swing.JTextField department;
     private javax.swing.JTextField doctorid;
     private javax.swing.JTextField doctorpassword;
     private javax.swing.JTextField doctoruser;
+    private javax.swing.JTextField gender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
