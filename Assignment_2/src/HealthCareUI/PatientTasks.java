@@ -41,7 +41,9 @@ public class PatientTasks extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Back = new javax.swing.JButton();
         btnAdminAddDcotor2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,6 +51,7 @@ public class PatientTasks extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(102, 255, 255));
         jPanel3.setPreferredSize(new java.awt.Dimension(100, 200));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnAdminAddDcotor.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         btnAdminAddDcotor.setText("Search Nearby Hospital");
@@ -57,6 +60,8 @@ public class PatientTasks extends javax.swing.JFrame {
                 btnAdminAddDcotorActionPerformed(evt);
             }
         });
+        jPanel3.add(btnAdminAddDcotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 349, -1, 56));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 73, 93, 56));
 
         Back.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         Back.setText("Back");
@@ -65,6 +70,7 @@ public class PatientTasks extends javax.swing.JFrame {
                 BackActionPerformed(evt);
             }
         });
+        jPanel3.add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 609, -1, 56));
 
         btnAdminAddDcotor2.setFont(new java.awt.Font("Yrsa SemiBold", 1, 18)); // NOI18N
         btnAdminAddDcotor2.setText("Encounter History");
@@ -73,56 +79,18 @@ public class PatientTasks extends javax.swing.JFrame {
                 btnAdminAddDcotor2ActionPerformed(evt);
             }
         });
+        jPanel3.add(btnAdminAddDcotor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 423, -1, 56));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnAdminAddDcotor)
-                        .addGap(23, 23, 23))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(Back)
-                        .addGap(86, 86, 86))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnAdminAddDcotor2)
-                        .addGap(38, 38, 38))))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(220, 220, 220)
-                .addComponent(btnAdminAddDcotor, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAdminAddDcotor2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
-                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(145, 145, 145))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/patient.jpg")); // NOI18N
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 810));
 
         jSplitPane2.setLeftComponent(jPanel3);
 
         jPanel4.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 692, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 808, Short.MAX_VALUE)
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/patient.jpg")); // NOI18N
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 810));
 
         jSplitPane2.setRightComponent(jPanel4);
 
@@ -211,6 +179,8 @@ public class PatientTasks extends javax.swing.JFrame {
     private javax.swing.JButton btnAdminAddDcotor;
     private javax.swing.JButton btnAdminAddDcotor2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSplitPane jSplitPane2;

@@ -92,7 +92,7 @@ private Hospital h;
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, 86, 33));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/HealthCareUI/ADMINLOGIN (1).png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1150, 730));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1150, 720));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -53,6 +53,9 @@ private TableRowSorter<TableModel> sorter;
         search2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,8 +67,9 @@ private TableRowSorter<TableModel> sorter;
                 searKeyReleased(evt);
             }
         });
+        add(sear, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 137, 541, 55));
 
-        jTable1.setBackground(new java.awt.Color(204, 255, 255));
+        jTable1.setBackground(new java.awt.Color(204, 204, 204));
         jTable1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jTable1.setForeground(new java.awt.Color(0, 102, 204));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -81,6 +85,8 @@ private TableRowSorter<TableModel> sorter;
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 843, 172));
+
         search.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search.setForeground(new java.awt.Color(0, 102, 204));
         search.setText("BOOK APPOINTMENT");
@@ -89,6 +95,7 @@ private TableRowSorter<TableModel> sorter;
                 searchActionPerformed(evt);
             }
         });
+        add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 750, -1, 59));
 
         search1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search1.setForeground(new java.awt.Color(0, 102, 204));
@@ -98,6 +105,7 @@ private TableRowSorter<TableModel> sorter;
                 search1ActionPerformed(evt);
             }
         });
+        add(search1, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 23, -1, 59));
 
         search2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         search2.setForeground(new java.awt.Color(0, 102, 204));
@@ -107,8 +115,9 @@ private TableRowSorter<TableModel> sorter;
                 search2ActionPerformed(evt);
             }
         });
+        add(search2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, 59));
 
-        jTable2.setBackground(new java.awt.Color(204, 255, 255));
+        jTable2.setBackground(new java.awt.Color(204, 204, 204));
         jTable2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jTable2.setForeground(new java.awt.Color(0, 102, 204));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -129,50 +138,10 @@ private TableRowSorter<TableModel> sorter;
         });
         jScrollPane2.setViewportView(jTable2);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(search)
-                .addGap(235, 235, 235))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(115, 115, 115)
-                            .addComponent(search2)
-                            .addGap(78, 78, 78)
-                            .addComponent(sear, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(379, 379, 379)
-                            .addComponent(search1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(111, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(search1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(search2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sear, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
-                .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
-        );
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 843, 172));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/pavan/Downloads/patient.jpg")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 840));
     }// </editor-fold>//GEN-END:initComponents
 
     private void searActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searActionPerformed
@@ -225,6 +194,7 @@ private TableRowSorter<TableModel> sorter;
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
