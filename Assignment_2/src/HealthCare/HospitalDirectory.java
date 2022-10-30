@@ -10,5 +10,38 @@ package HealthCare;
  * @author pavan
  */
 public class HospitalDirectory {
+    private String hospitalNme;
+    private String hospitalComm;
+    private int hospitalIiD;
+
+    public String getHospitalNme() {
+        return hospitalNme;
+    }
+
+    public void setHospitalNme(String hospitalNme) {
+        this.hospitalNme = hospitalNme;
+    }
+
+    public String getHospitalComm() {
+        return hospitalComm;
+    }
+
+    public void setHospitalComm(String hospitalComm) {
+        this.hospitalComm = hospitalComm;
+    }
+
+    public int getHospitalID() {
+        return hospitalIiD;
+    }
+
+    public void setHospitalID(int hospitalID) {
+        this.hospitalIiD = hospitalID;
+    }
+
+    public HospitalDirectory(String hospitalNme, String hospitalComm, int hospitalID) {
+        this.hospitalNme = hospitalNme;
+        this.hospitalComm = hospitalComm;
+        this.hospitalIiD = hospitalID;
+    }
     
 }

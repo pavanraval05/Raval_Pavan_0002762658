@@ -139,6 +139,10 @@ public class SystemAdminCommunityAddCommunity extends javax.swing.JPanel {
 
     private void btnAdminAddDcotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminAddDcotorActionPerformed
         // TODO add your handling code here:
+        if(communityName.getText().trim().equalsIgnoreCase("") ||user.getText().trim().equalsIgnoreCase("")||
+                pass.getText().trim().equalsIgnoreCase("")){
+                        JOptionPane.showMessageDialog(this, "Empty TextFields");
+        }
          if(!Pattern.compile("[a-zA-Z ]+").matcher(communityName.getText()).matches()){
             JOptionPane.showMessageDialog(this, "Please enter valid name");
             return;

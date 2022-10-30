@@ -144,7 +144,11 @@ public class SystemAdminAddPatientJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDoctorActionPerformed
-if(!Pattern.compile("[a-zA-Z ]+").matcher(patientName.getText()).matches()){
+if(patientName.getText().trim().equalsIgnoreCase("") ||patientUser.getText().trim().equalsIgnoreCase("")||
+                patientID.getText().trim().equalsIgnoreCase("")||patientPass.getText().trim().equalsIgnoreCase("")){
+                        JOptionPane.showMessageDialog(this, "Empty TextFields");
+        }
+        if(!Pattern.compile("[a-zA-Z ]+").matcher(patientName.getText()).matches()){
             JOptionPane.showMessageDialog(this, "Please enter valid name");
             return;
 //            ([a-z].[0-9])|([0-9].[a-z])

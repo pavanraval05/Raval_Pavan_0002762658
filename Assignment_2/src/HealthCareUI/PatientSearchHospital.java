@@ -155,7 +155,7 @@ private TableRowSorter<TableModel> sorter;
             Encounter e = new Encounter(d,this.patient);
             SystemAdmin.encounterList.add(e);
            
-            JOptionPane.showMessageDialog(null, "Appoointment Booked");
+            JOptionPane.showMessageDialog(null, " Encounter Created Successfully");
         }
 
 //if(jTable1.getSelectedRow()>-1) {

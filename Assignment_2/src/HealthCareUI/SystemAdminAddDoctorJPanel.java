@@ -182,7 +182,11 @@ public class SystemAdminAddDoctorJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-if(!Pattern.compile("[a-zA-Z ]+").matcher(name.getText()).matches()){
+if(name.getText().trim().equalsIgnoreCase("") ||doctorid.getText().trim().equalsIgnoreCase("")||
+                doctoruser.getText().trim().equalsIgnoreCase("")||doctorpassword.getText().trim().equalsIgnoreCase("")){
+                        JOptionPane.showMessageDialog(this, "Empty TextFields");
+        }
+        if(!Pattern.compile("[a-zA-Z ]+").matcher(name.getText()).matches()){
             JOptionPane.showMessageDialog(this, "Please enter valid name");
             return;
 //            ([a-z].[0-9])|([0-9].[a-z])

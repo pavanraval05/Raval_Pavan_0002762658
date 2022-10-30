@@ -152,7 +152,11 @@ public class SystemAdminAddHospitalJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-       if(!Pattern.compile("[a-zA-Z ]+").matcher(hospName.getText()).matches()){
+       if(hospName.getText().trim().equalsIgnoreCase("") ||user.getText().trim().equalsIgnoreCase("")||
+                pass.getText().trim().equalsIgnoreCase("")){
+                        JOptionPane.showMessageDialog(this, "Empty TextFields");
+        }
+        if(!Pattern.compile("[a-zA-Z ]+").matcher(hospName.getText()).matches()){
             JOptionPane.showMessageDialog(this, "Please enter valid name");
             return;
 //            ([a-z].[0-9])|([0-9].[a-z])
