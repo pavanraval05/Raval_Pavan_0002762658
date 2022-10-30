@@ -9,6 +9,7 @@ import HealthCare.Community;
 import HealthCare.Doctor;
 import HealthCare.Hospital;
 import HealthCare.SystemAdmin;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -136,7 +137,24 @@ public class CommunityAdminAddCommunity extends javax.swing.JPanel {
 
     private void btnAdminAddDcotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminAddDcotorActionPerformed
         // TODO add your handling code here:
-         if(jTable1.getSelectedRow()>-1) {
+           if(!Pattern.compile("[a-zA-Z ]+").matcher(communityName.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "Please enter valid name");
+            return;
+//            ([a-z].[0-9])|([0-9].[a-z])
+//           
+        }
+        if(!Pattern.compile("^[a-zA-Z0-9._-]{3,}$").matcher(user.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "6");
+            return;
+        }if(!Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$").matcher(pass.getText()).matches()){
+            JOptionPane.showMessageDialog(this, "    Password must contain at least one digit [0-9].\n" +
+"    Password must contain at least one lowercase Latin character [a-z].\n" +
+"    Password must contain at least one uppercase Latin character [A-Z].\n" +
+"    Password must contain at least one special character like ! @ # & ( ).\n" +
+"    Password must contain a length of at least 8 characters and a maximum of 20 characters.");
+            return;
+        }
+        if(jTable1.getSelectedRow()>-1) {
           City c = (City)jTable1.getValueAt(jTable1.getSelectedRow(),1);
          Community b= new Community(communityName.getText(),c,user.getText(),pass.getText());
          SystemAdmin.communityList.add(b);
