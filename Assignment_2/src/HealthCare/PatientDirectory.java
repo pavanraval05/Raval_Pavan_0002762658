@@ -19,6 +19,7 @@ public class PatientDirectory {
         this.patIiD = patIiD;
     }
 
+   
     public String getPatNme() {
         return patNme;
     }

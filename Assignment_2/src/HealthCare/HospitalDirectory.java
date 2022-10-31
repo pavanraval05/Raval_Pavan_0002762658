@@ -38,10 +38,12 @@ public class HospitalDirectory {
         this.hospitalIiD = hospitalID;
     }
 
-    public HospitalDirectory(String hospitalNme, String hospitalComm, int hospitalID) {
+    public HospitalDirectory(String hospitalNme, String hospitalComm, int hospitalIiD) {
         this.hospitalNme = hospitalNme;
         this.hospitalComm = hospitalComm;
-        this.hospitalIiD = hospitalID;
+        this.hospitalIiD = hospitalIiD;
     }
+
+   
     
 }

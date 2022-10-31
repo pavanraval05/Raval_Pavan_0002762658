@@ -15,13 +15,7 @@ public class DoctorDirectory {
    public String gendr;
    public String department1;
 
-    public DoctorDirectory(String username12, String password1, String nam, String gendr, String department12) {
-        this.username12 = username12;
-        this.password1 = password1;
-        this.nam = nam;
-        this.gendr = gendr;
-        this.department1 = department12;
-    }
+  
 
     public String getUsername12() {
         return username12;
