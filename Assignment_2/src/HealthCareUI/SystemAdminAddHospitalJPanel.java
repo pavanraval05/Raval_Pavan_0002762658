@@ -175,6 +175,12 @@ public class SystemAdminAddHospitalJPanel extends javax.swing.JPanel {
         }
         if(jTable1.getSelectedRow()>-1){
             String name = hospName.getText();
+            for(Hospital p:SystemAdmin.hospitalList){
+            if(user.getText().equals(p.getUsername())){
+                JOptionPane.showMessageDialog(null, "Username Exist Please Change.");  
+                return;
+            }
+            }
             //         String name = name.getText();
              Hospital hospital = new Hospital(hospName.getText(),user.getText(),pass.getText(),(Community)jTable1.getValueAt(jTable1.getSelectedRow(), 1));
              SystemAdmin.hospitalList.add(hospital);

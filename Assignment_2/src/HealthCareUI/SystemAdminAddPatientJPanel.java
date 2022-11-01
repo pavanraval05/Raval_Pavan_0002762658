@@ -184,6 +184,17 @@ if(patientName.getText().trim().equalsIgnoreCase("") ||patientUser.getText().tri
             return;
         }
         int id = Integer.parseInt(patientID.getText());
+        
+        for(Patient p:SystemAdmin.patientList){
+            if(patientUser.getText().equals(p.username)){
+                JOptionPane.showMessageDialog(null, "Username Exist Please Change.");  
+                return;
+            }
+            if(id == p.patientID){
+                JOptionPane.showMessageDialog(null, "ID Exist Please Change.");  
+                return;
+            }
+        }
 //         String name = name.getText();
          Patient patient = new Patient(id, patientUser.getText(), patientPass.getText(), patientName.getText(), patientCommunity.getText(), patientCity.getText(), patientCommunity.getText());
          SystemAdmin.patientList.add(patient);

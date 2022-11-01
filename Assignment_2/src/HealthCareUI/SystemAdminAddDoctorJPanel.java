@@ -8,6 +8,7 @@ import HealthCare.City;
 import HealthCare.Community;
 import HealthCare.Doctor;
 import HealthCare.Hospital;
+import HealthCare.Patient;
 import HealthCare.SystemAdmin;
 import java.util.regex.Pattern;
 import javax.swing.DefaultComboBoxModel;
@@ -221,6 +222,16 @@ if(name.getText().trim().equalsIgnoreCase("") ||doctorid.getText().trim().equals
         }
         if(jTable1.getSelectedRow()>-1){
         int id = Integer.parseInt(doctorid.getText());
+        for(Doctor p:SystemAdmin.doctorList){
+            if(doctoruser.getText().equals(p.username)){
+                JOptionPane.showMessageDialog(null, "Username Exist Please Change.");  
+                return;
+            }
+            if(id == p.doctorID){
+                JOptionPane.showMessageDialog(null, "ID Exist Please Change.");  
+                return;
+            }
+        }
          String name1 = name.getText();
          Doctor doctor = new Doctor(id, doctoruser.getText(), doctorpassword.getText(), name.getText(), gender.getText(), department.getText(),(Hospital)jTable1.getValueAt(jTable1.getSelectedRow(), 1));
          SystemAdmin.doctorList.add(doctor);

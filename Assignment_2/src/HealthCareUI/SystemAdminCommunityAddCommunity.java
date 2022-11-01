@@ -160,8 +160,15 @@ public class SystemAdminCommunityAddCommunity extends javax.swing.JPanel {
 "    Password must contain a length of at least 8 characters and a maximum of 20 characters.");
             return;
         }
+        
         if(jTable1.getSelectedRow()>-1) {
           City c = (City)jTable1.getValueAt(jTable1.getSelectedRow(),1);
+          for(Community p:SystemAdmin.communityList){
+            if(user.getText().equals(p.getUsername())){
+                JOptionPane.showMessageDialog(null, "Username Exist Please Change.");  
+                return;
+            }
+          }
          Community b= new Community(communityName.getText(),c,user.getText(),pass.getText());
          SystemAdmin.communityList.add(b);
          fillTable1();

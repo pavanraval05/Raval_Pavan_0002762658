@@ -66,4 +66,5 @@ public class Community {
         return user.equals(username) && pass.equals(password);
     }
     
+    
 }
